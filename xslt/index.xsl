@@ -11,47 +11,114 @@
     <xsl:import href="./partials/html_head.xsl"/>
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
-    <xsl:import href="./partials/one_time_alert.xsl"/>
 
 
     <xsl:template match="/">
         <xsl:variable name="doc_title">
-            <xsl:value-of select='"Grazer Nuntiaturberichte"'/>
+            <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level='s']"/>
         </xsl:variable>
         <html class="h-100">
             <head>
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"></xsl:with-param>
                 </xsl:call-template>
+                <style>
+                    table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-bottom: 20px;
+                    }
+                    
+                    table th, table td {
+                    padding: 10px;
+                    border: 1px solid #dee2e6;
+                    text-align: left;
+                    }
+                    
+                    table th {
+                    background-color: #f8f9fa;
+                    }
+                    
+                    table tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                    }
+                    
+                    table a {
+                    color: #007bff;
+                    text-decoration: none;
+                    }
+                    
+                    table a:hover {
+                    text-decoration: underline;
+                    }
+                    
+                </style>
             </head>            
             <body class="d-flex flex-column h-100">
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0">
                     <div class="container">
-                        <xsl:call-template name="one_time_alert"/>
-                        <h1><xsl:value-of select="$project_short_title"/></h1>
-                        <h2><xsl:value-of select="$project_title"/></h2>
+                        <div class="my-4" style="text-align:center">
+                            <h1>Über das Projekt</h1>
+                        </div>
+                        <xsl:apply-templates select="//tei:body/tei:div"/>
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
             </body>
         </html>
     </xsl:template>
-    <xsl:template match="tei:div//tei:head">
-        <h2 id="{generate-id()}"><xsl:apply-templates/></h2>
-    </xsl:template>
     
     <xsl:template match="tei:p">
-        <p id="{generate-id()}"><xsl:apply-templates/></p>
+        <p><xsl:value-of select="."/></p>
     </xsl:template>
     
-    <xsl:template match="tei:list">
-        <ul id="{generate-id()}"><xsl:apply-templates/></ul>
+    <xsl:template match="tei:table">
+        <table>
+            <xsl:for-each select="tei:row">
+                <tr>
+                    <xsl:choose>
+                        <!-- Erste Zeile: Alle Zellen als th -->
+                        <xsl:when test="position() = 1">
+                            <xsl:for-each select="tei:cell">
+                                <th>
+                                    <xsl:value-of select="."/>
+                                </th>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <!-- Alle anderen Zeilen: Erste Zelle als th, Rest als td -->
+                        <xsl:otherwise>
+                            <xsl:for-each select="tei:cell">
+                                <xsl:choose>
+                                    <xsl:when test="position()=1">
+                                        <th>
+                                            <xsl:value-of select="."/>
+                                        </th>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <td>
+                                            <xsl:choose>
+                                                <xsl:when test="tei:ref">
+                                                    <a href="{tei:ref/@target}">
+                                                        <xsl:value-of select="tei:ref"/>
+                                                    </a>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:value-of select="."/>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </td>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </tr>
+            </xsl:for-each>
+        </table>
     </xsl:template>
     
-    <xsl:template match="tei:item">
-        <li id="{generate-id()}"><xsl:apply-templates/></li>
-    </xsl:template>
+    
     <xsl:template match="tei:ref">
         <xsl:choose>
             <xsl:when test="starts-with(data(@target), 'http')">
@@ -65,4 +132,18 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+    
+    <xsl:template match="tei:head">
+        <h2><xsl:value-of select="."/></h2>
+    </xsl:template>
+    
+    <xsl:template match="tei:list">
+        <ul><xsl:apply-templates/></ul>
+    </xsl:template>
+    
+    <xsl:template match="tei:item">
+        <li><xsl:value-of select="."/></li>
+    </xsl:template>
+    
+    
 </xsl:stylesheet>
