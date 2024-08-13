@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="#all" version="2.0">
+    <xsl:include href="./params.xsl"/>
     <xsl:template match="/" name="nav_bar">
         <header>
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <xsl:value-of select="$project_short_title"/>
+                    <!-- Linksbündig -->
+                    <a href="index.html" class="navbar-brand custom-logo-link" rel="home"
+                        itemprop="url">
+                        <img
+                            src="./images/schriftzug-navbar.png"
+                            class="img-fluid" title="grazer-nuntiaturberichte" alt="grazer-nuntiaturberichte"
+                            itemprop="logo"/>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"/>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Rechtsbündige Navigationselemente -->
+                    <div class="collapse navbar-collapse justify-content-end"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Projekt</a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Projekt</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="about.html">Über das Projekt</a>
+                                        <a class="dropdown-item" href="index.html">Über das
+                                            Projekt</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Editionsrichtlinien</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Danksagung</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="imprint.html">Impressum</a>
@@ -27,24 +47,58 @@
                                 </ul>
                             </li>
 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    >Bandeinleitungen</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="...">Band 1</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Band 2</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Band 3</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Band 4</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="...">Band 5</a>
+                                    </li>
+                                </ul>
+                            </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="toc.html">Editionseinheiten</a>
+                                <a class="nav-link" href="...">Briefe</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="...">Kalender</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="register.html">Register</a>
                             </li>
 
                             <li class="nav-item dropdown disabled">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Register</a>
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Technisches</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="listperson.html">Personen</a>
+                                        <a class="dropdown-item" href="..."
+                                            >Kodierungsrichtlinien</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listplace.html">Orte</a>
+                                        <a class="dropdown-item" href="...">Arbeitsablauf</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listorg.html">Organisationen</a>
+                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-data">Quelldaten auf
+                                            GitHub</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="listbibl.html">Werke</a>
+                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-static">App auf GitHub</a>
                                     </li>
                                 </ul>
                             </li>
@@ -56,6 +110,7 @@
                     </div>
                 </div>
             </nav>
+
         </header>
     </xsl:template>
 </xsl:stylesheet>
