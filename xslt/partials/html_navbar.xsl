@@ -39,9 +39,6 @@
                                         <a class="dropdown-item" href="...">Editionsrichtlinien</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Danksagung</a>
-                                    </li>
-                                    <li>
                                         <a class="dropdown-item" href="imprint.html">Impressum</a>
                                     </li>
                                 </ul>
@@ -87,7 +84,7 @@
                                     data-bs-toggle="dropdown" aria-expanded="false">Technisches</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="..."
+                                        <a class="dropdown-item" href="kodierungsrichtlinien.html"
                                             >Kodierungsrichtlinien</a>
                                     </li>
                                     <li>
