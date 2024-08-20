@@ -4,7 +4,7 @@
     exclude-result-prefixes="#all" version="2.0">
     <xsl:include href="./params.xsl"/>
     <xsl:template match="/" name="html_footer">
-        <footer class="text-center text-lg-start bg-body-tertiary text-muted">
+        <footer class="text-center text-lg-start bg-body-tertiary text-muted mt-4">
             <section
                 class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
                 <div class="container text-center text-md-start mt-5">
@@ -13,7 +13,8 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;">Kontakt</h6>
+                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;"
+                                >Kontakt</h6>
                             <p>Austrian Centre for Digital Humanities and Cultural Heritage</p>
                             <p>Bäckerstraße 13</p>
                             <p>1010 Wien</p>
@@ -34,7 +35,8 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;">Förderinstitution</h6>
+                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;"
+                                >Förderinstitution</h6>
                             <p>Österreichisches Historisches Institut Rom</p>
                             <p>Viale Bruno Buozzi 111-113</p>
                             <p>I-00197 Rom</p>
@@ -52,11 +54,18 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;">Helpdesc</h6>
+                            <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;"
+                                >Helpdesc</h6>
                             <p>Bei Fragen, Anmerkungen, Kritik, aber gerne auch Lob, wenden Sie sich
-                                bitte an den ACDH-CH Helpdesk.</p>
+                                bitte an den ACDH-CH Helpdesk oder an den
+                                Projektverantwortlichen.</p>
                             <p>E: <a href="mailto:acdh-ch-helpdesk@oeaw.ac.at"
-                                    >acdh-ch-helpdesk@oeaw.ac.at</a></p>
+                                    >acdh-ch-helpdesk@oeaw.ac.at</a><br/> E: <a
+                                    href="mailto:kroissenbrunner.martin@gmail.com"
+                                    >kroissenbrunner.martin@gmail.com</a></p>
+                            <p>Sie können auch gerne Issues im <a
+                                    href="https://github.com/nuntiaturberichte/nbr-graz-static"
+                                    >GitHub-Repository</a> erstellen.</p>
                         </div>
                         <!-- Grid column -->
                     </div>
