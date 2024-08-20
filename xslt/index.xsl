@@ -70,7 +70,7 @@
     </xsl:template>
     
     <xsl:template match="tei:p">
-        <p><xsl:value-of select="."/></p>
+        <p><xsl:apply-templates/></p>
     </xsl:template>
     
     <xsl:template match="tei:table">
@@ -78,7 +78,6 @@
             <xsl:for-each select="tei:row">
                 <tr>
                     <xsl:choose>
-                        <!-- Erste Zeile: Alle Zellen als th -->
                         <xsl:when test="position() = 1">
                             <xsl:for-each select="tei:cell">
                                 <th>
@@ -86,7 +85,6 @@
                                 </th>
                             </xsl:for-each>
                         </xsl:when>
-                        <!-- Alle anderen Zeilen: Erste Zelle als th, Rest als td -->
                         <xsl:otherwise>
                             <xsl:for-each select="tei:cell">
                                 <xsl:choose>
