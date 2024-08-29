@@ -88,7 +88,7 @@
                                             >Kodierungsrichtlinien</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Arbeitsablauf</a>
+                                        <a class="dropdown-item" href="arbeitsablauf.html">Arbeitsablauf</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-data">Quelldaten auf
