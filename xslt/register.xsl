@@ -70,6 +70,23 @@
                                 <xsl:apply-templates select="//tei:body/tei:list/tei:item"/>
                             </tbody>
                         </table>
+                        <p style="font-style: italic;">Hinweis: Da in den Büchern mehrere Briefe auf
+                            einer Seite vorkommen können, war es nicht ohne weiteres möglich,
+                            die Seitenzahlen in Briefnummern umzuwandeln. Eine solche Umwandlung
+                            hätte es jedoch ermöglicht, im Register auf die Briefnummern statt
+                            auf die Seitenzahlen zu verweisen, was dem digitalen Format der
+                            Edition besser entsprochen hätte. Da dies nicht möglich war, bleiben
+                            die Seitenzahlen als Links im Register erhalten. Diese Links
+                            verweisen auf bestimmte <code>a@id</code>-Elemente im HTML-Code der
+                            Briefe. Diese Elemente sind genau an den Stellen eingefügt, an denen
+                            die Seitenzahlen im Fließtext des Buches erscheinen. Durch Anklicken
+                            einer Seitenzahl im Register wird der entsprechende Brief angezeigt,
+                            der diese Seitenzahl im Buch enthält. Wenn der gesuchte Inhalt nicht
+                            in dem angezeigten Brief enthalten ist, kann dies daran liegen, dass
+                            im Buch auf dieser Seite mehrere Briefe abgedruckt sind. In diesem
+                            Fall sollte die Suche im nächsten Brief fortgesetzt werden. Die
+                            gesuchte Entität sollte bis zum nächsten <code>a@id</code>-Element
+                            aufgefunden werden.</p>
                     </div>
                     <xsl:call-template name="html_tabulator_dl_buttons"/>
                 </main>
