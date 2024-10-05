@@ -5,7 +5,7 @@
     <xsl:include href="./params.xsl"/>
     <xsl:template match="/" name="nav_bar">
         <header>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <nav class="navbar navbar-expand-lg" style="background-color: #cccccc;">
                 <div class="container-fluid">
                     <!-- Linksbündig -->
                     <a href="index.html" class="navbar-brand custom-logo-link" rel="home"
