@@ -91,7 +91,7 @@
                     <xsl:call-template name="html_tabulator_dl_buttons"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <xsl:call-template name="tabulator_js"/>
+                <xsl:call-template name="tabulator_js_register"/>
             </body>
         </html>
     </xsl:template>
@@ -106,24 +106,24 @@
                 <xsl:apply-templates select="tei:ref"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-1')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/1/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-1')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L1')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-2')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/2/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-2')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L2')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-3')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/3/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-3')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L3')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-4')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/4/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-4')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L4')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-5')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/5/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-5')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L5')]"/>
             </td>
         </tr>
         <xsl:apply-templates select="tei:list/tei:item"/>
