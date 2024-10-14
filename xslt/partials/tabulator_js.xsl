@@ -9,7 +9,7 @@
         <script src="tabulator-js/config.js"/>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-            var table = new Tabulator("#tabulator-table", {
+            var table = new Tabulator("#tabulator-table-register", {
             pagination: "local",  // Paginierung aktivieren
             paginationSize: 25,   // 25 Zeilen pro Seite anzeigen
             paginationCounter: "rows",  // Anzeige der Seitenanzahl im Footer
@@ -114,5 +114,53 @@
             table.download("html", "data.html", {style:true});
             });
         </script>
+    </xsl:template>
+    
+    <xsl:template match="/" name="tabulator_js_postwege">
+        <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator.min.css"
+            rel="stylesheet"/>
+        <script type="text/javascript" src="https://unpkg.com/tabulator-tables@6.2.5/dist/js/tabulator.min.js"/>
+        <script src="tabulator-js/config.js"/>
+        <script>
+            var table = new Tabulator("#tabulator-table-postwege", {
+            pagination: "local",        // Paginierung aktivieren
+            paginationSize: 25,         // 25 Reihen pro Seite anzeigen
+            paginationCounter: "rows",  // Zeilenanzahl im Footer anzeigen
+            movableColumns: true,       // Spalten verschiebbar machen
+            layout: "fitColumns",       // Layout anpassen
+            initialSort: [
+            { column: "sendedatum", dir: "asc" }  // Initiale Sortierung nach Sendedatum
+            ],
+            langs: {
+            "de-de": { // Deutsche Sprachdefinition
+            "pagination": {
+            "first": "Erste",
+            "first_title": "Erste Seite",
+            "last": "Letzte",
+            "last_title": "Letzte Seite",
+            "prev": "Vorige",
+            "prev_title": "Vorige Seite",
+            "next": "Nächste",
+            "next_title": "Nächste Seite",
+            "all": "Alle",
+            "counter": {
+            "showing": "Zeige",
+            "of": "von",
+            "rows": "Reihen",
+            "pages": "Seiten"
+            }
+            }
+            }
+            },
+            locale: "de-de", // Lokalisierung auf Deutsch
+            columns: [
+            { title: "Briefnummer", field: "briefnummer", headerFilter: "input", formatter: "html" },
+            { title: "Titel", field: "titel", headerFilter: "input", formatter: "html" },
+            { title: "Sendedatum", field: "sendedatum", headerFilter: "input", formatter: "html" },
+            { title: "Sendeort", field: "sendeort", headerFilter: "input", formatter: "html" }
+            ]
+            });
+        </script>
+        
     </xsl:template>
 </xsl:stylesheet>
