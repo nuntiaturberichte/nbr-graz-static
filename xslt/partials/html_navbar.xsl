@@ -5,7 +5,7 @@
     <xsl:include href="./params.xsl"/>
     <xsl:template match="/" name="nav_bar">
         <header>
-            <nav class="navbar navbar-expand-lg" style="background-color: #cccccc;">
+            <nav class="navbar navbar-expand-lg bg-light sticky-top">
                 <div class="container-fluid">
                     <!-- Linksbündig -->
                     <a href="index.html" class="navbar-brand custom-logo-link" rel="home"
@@ -36,9 +36,6 @@
                                             Projekt</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Editionsrichtlinien</a>
-                                    </li>
-                                    <li>
                                         <a class="dropdown-item" href="imprint.html">Impressum</a>
                                     </li>
                                 </ul>
@@ -62,13 +59,13 @@
                                         <a class="dropdown-item" href="...">Band 4</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Band 5</a>
+                                        <a class="dropdown-item" href="front-5.html">Band 5</a>
                                     </li>
                                 </ul>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="...">Briefe</a>
+                                <a class="nav-link" href="postwege.html">Briefe</a>
                             </li>
 
                             <li class="nav-item">
