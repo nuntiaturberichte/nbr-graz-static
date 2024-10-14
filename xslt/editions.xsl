@@ -4,7 +4,6 @@
     <xsl:import href="./partials/html_head.xsl"/>
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
-    <xsl:import href="./partials/tabulator_js.xsl"/>
     <xsl:output method="html" indent="yes"/>
 
     <xsl:template match="/">
@@ -264,27 +263,31 @@
                                                 <xsl:if test="@type = 'footnote'">
                                                   <xsl:variable name="fnSign"
                                                   select="number(substring-after(substring-after(@xml:id, '_'), '_'))"/>
-                                                    <xsl:variable name="fnId" select="@xml:id"/>
-                                                  <li id="{$fnId}">
+                                                  <xsl:variable name="fnId" select="@xml:id"/>
+                                                  <li id="{$fnId}_app" href="#{$fnId}_con">
                                                   <sup>
                                                   <span class="badge bg-primary">
                                                   <xsl:value-of select="number($fnSign)"/>
                                                   </span>
-                                                  </sup>&#160; <xsl:value-of
-                                                  select="normalize-space(.)"/>
+                                                  </sup>&#160;<xsl:value-of
+                                                  select="normalize-space(.)"/>&#160;<a
+                                                  href="#{$fnId}_con"><i class="bi bi-arrow-up"
+                                                  /></a>
                                                   </li>
                                                 </xsl:if>
                                                 <xsl:if test="@type = 'siglum'">
                                                   <xsl:variable name="sSign"
                                                   select="substring-after(@xml:id, '_')"/>
-                                                    <xsl:variable name="sId" select="@xml:id"/>
-                                                  <li id="{$sId}">
+                                                  <xsl:variable name="sId" select="@xml:id"/>
+                                                  <li id="{$sId}_app" href="#{$sId}_con">
                                                   <sup>
                                                   <span class="badge bg-primary">
                                                   <xsl:value-of select="$sSign"/>
                                                   </span>
-                                                  </sup>&#160; <xsl:value-of
-                                                  select="normalize-space(.)"/>
+                                                  </sup>&#160;<xsl:value-of
+                                                  select="normalize-space(.)"/>&#160;<a
+                                                  href="#{$sId}_con"><i class="bi bi-arrow-up"
+                                                  /></a>
                                                   </li>
                                                 </xsl:if>
                                             </xsl:for-each>
@@ -325,7 +328,7 @@
     <xsl:template match="tei:note[@type = 'footnote']">
         <xsl:variable name="fnSign" select="substring-after(substring-after(@xml:id, '_'), '_')"/>
         <xsl:variable name="fnId" select="@xml:id"/>
-        <a class="footnote" href="#{$fnId}">
+        <a class="footnote" id="{$fnId}_con" href="#{$fnId}_app">
             <sup>
                 <span class="badge bg-primary">
                     <xsl:value-of select="number($fnSign)"/>
@@ -337,7 +340,7 @@
     <xsl:template match="tei:note[@type = 'siglum']">
         <xsl:variable name="sSign" select="substring-after(@xml:id, '_')"/>
         <xsl:variable name="sId" select="@xml:id"/>
-        <a class="siglum" href="#{$sId}">
+        <a class="siglum" id="{$sId}_con" href="#{$sId}_app">
             <sup>
                 <span class="badge bg-primary">
                     <xsl:value-of select="$sSign"/>
