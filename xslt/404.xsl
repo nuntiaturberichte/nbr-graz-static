@@ -25,8 +25,11 @@
             <body class="d-flex flex-column h-100">
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0">
-                    <div class="container">
+                    <div class="my-4" style="text-align:center">
                         <h1>404</h1>
+                        <img src="../html/images/portrait.jpg" style="width: 20%; height: auto;"/>
+                        <p>Es tut uns leid, aber die Seite, die Sie suchen, existiert nicht.</p>
+                        <p>Zurück zur <a href="index.html">Startseite</a></p>
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
