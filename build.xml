@@ -13,11 +13,11 @@
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
     </xslt>
-    <xslt in="./xslt/postwege.xsl" out="${target}/postwege.html"
+    <!-- <xslt in="./xslt/postwege.xsl" out="${target}/postwege.html"
         style="./xslt/postwege.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
         <classpath location="${basedir}/saxon/saxon9he.jar"/>
-    </xslt>
+    </xslt> -->
     <xslt in="./xslt/404.xsl" out="${target}/404.html"
         style="./xslt/404.xsl">
         <factory name="net.sf.saxon.TransformerFactoryImpl"/>
