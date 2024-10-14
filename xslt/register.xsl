@@ -53,7 +53,7 @@
                     <div id="loader"/>
                     <div style="display: block; justify-content: center; margin: 0 2em;"
                         id="tabulator-table-wrapper">
-                        <table class="table table-sm display" id="tabulator-table">
+                        <table class="table table-sm display" id="tabulator-table-register">
                             <thead>
                                 <tr>
                                     <th>Begriff (1. Ebene)</th>
