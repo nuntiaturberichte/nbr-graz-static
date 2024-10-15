@@ -14,9 +14,8 @@
 
 
     <xsl:template match="/">
-        <xsl:variable name="doc_title">
-            <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level='s']"/>
-        </xsl:variable>
+        <xsl:variable name="doc_title" select="'Über das Projekt'"/>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html class="h-100">
             <head>
                 <xsl:call-template name="html_head">

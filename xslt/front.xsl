@@ -7,6 +7,10 @@
     <xsl:output method="html" indent="yes"/>
 
     <xsl:template match="/">
+        <xsl:variable name="doc_title">
+            <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level='a']"/>
+        </xsl:variable>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html>
             <head>
                 <xsl:call-template name="html_head"/>

@@ -16,6 +16,7 @@
             <xsl:value-of
                 select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level = 's']"/>
         </xsl:variable>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html class="h-100">
             <head>
                 <xsl:call-template name="html_head">

@@ -15,6 +15,7 @@
 
     <xsl:template match="/">
         <xsl:variable name="doc_title" select="'Impressum'"/>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html class="h-100">
             <head>
                 <xsl:call-template name="html_head">

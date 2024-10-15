@@ -10,6 +10,8 @@
     <xsl:strip-space elements="*"/>
 
     <xsl:template match="/">
+        <xsl:variable name="doc_title" select="'Register'"/>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html>
             <head>
                 <xsl:call-template name="html_head"/>

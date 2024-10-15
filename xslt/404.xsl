@@ -13,9 +13,8 @@
     <xsl:import href="./partials/html_footer.xsl"/>
 
     <xsl:template match="/">
-        <xsl:variable name="doc_title">
-            <xsl:value-of select='"404 - Page not found"'/>
-        </xsl:variable>
+        <xsl:variable name="doc_title" select="'404 - Seite nicht gefunden'"/>
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html class="h-100">
             <head>
                 <xsl:call-template name="html_head">
