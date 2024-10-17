@@ -28,7 +28,13 @@
                             <thead>
                                 <tr>
                                     <th scope="col" tabulator-headerFilter="input"
+                                        tabulator-formatter="html">Bandnummer</th>
+                                    <th scope="col" tabulator-headerFilter="input"
                                         tabulator-formatter="html">Briefnummer</th>
+                                    <th scope="col" tabulator-headerFilter="input"
+                                        tabulator-formatter="html">Sender</th>
+                                    <th scope="col" tabulator-headerFilter="input"
+                                        tabulator-formatter="html">Empfänger</th>
                                     <th scope="col" tabulator-headerFilter="input"
                                         tabulator-formatter="html">Titel</th>
                                     <th scope="col" tabulator-headerFilter="input"
@@ -46,7 +52,31 @@
                                         <td>
                                             <a>
                                                 <xsl:value-of
+                                                    select="descendant::tei:monogr/tei:biblScope/@n"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a>
+                                                <xsl:value-of
                                                   select="descendant::tei:body/tei:head/@n"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a>
+                                                <xsl:attribute name="href">
+                                                    <xsl:value-of select="substring-after(descendant::tei/correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"/>
+                                                </xsl:attribute>
+                                                <xsl:value-of
+                                                    select="descendant::tei:correspDesc/tei:correspAction[@type='sent']/tei:persName[1]"/>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a>
+                                                <xsl:attribute name="href">
+                                                    <xsl:value-of select="substring-after(descendant::tei/correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"/>
+                                                </xsl:attribute>
+                                                <xsl:value-of
+                                                    select="descendant::tei:correspDesc/tei:correspAction[@type='received']/tei:persName[1]"/>
                                             </a>
                                         </td>
                                         <td>

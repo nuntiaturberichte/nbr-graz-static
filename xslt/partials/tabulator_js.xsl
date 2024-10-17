@@ -154,7 +154,10 @@
             },
             locale: "de-de", // Lokalisierung auf Deutsch
             columns: [
+            { title: "Bandnummer", field: "bandnummer", headerFilter: "input", formatter: "html" },
             { title: "Briefnummer", field: "briefnummer", headerFilter: "input", formatter: "html" },
+            { title: "Sender", field: "sender", headerFilter: "input", formatter: "html" },
+            { title: "Empfänger", field: "empfänger", headerFilter: "input", formatter: "html" },
             { title: "Titel", field: "titel", headerFilter: "input", formatter: "html" },
             { title: "Sendedatum", field: "sendedatum", headerFilter: "input", formatter: "html" },
             { title: "Sendeort", field: "sendeort", headerFilter: "input", formatter: "html" }
