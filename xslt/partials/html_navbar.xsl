@@ -47,16 +47,16 @@
                                     >Bandeinleitungen</a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="...">Band 1</a>
+                                        <a class="dropdown-item" href="front-1.html">Band 1</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Band 2</a>
+                                        <a class="dropdown-item" href="front-2.html">Band 2</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Band 3</a>
+                                        <a class="dropdown-item" href="front-3.html">Band 3</a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="...">Band 4</a>
+                                        <a class="dropdown-item" href="front-4.html">Band 4</a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="front-5.html">Band 5</a>
@@ -69,7 +69,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="...">Kalender</a>
+                                <a class="nav-link" href="calendar.html">Kalender</a>
                             </li>
 
                             <li class="nav-item">
