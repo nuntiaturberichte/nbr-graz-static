@@ -64,7 +64,7 @@
                                         <td>
                                             <a>
                                                 <xsl:attribute name="href">
-                                                    <xsl:value-of select="substring-after(descendant::tei/correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"/>
+                                                    <xsl:value-of select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"/>
                                                 </xsl:attribute>
                                                 <xsl:value-of
                                                     select="descendant::tei:correspDesc/tei:correspAction[@type='sent']/tei:persName[1]"/>
@@ -73,7 +73,7 @@
                                         <td>
                                             <a>
                                                 <xsl:attribute name="href">
-                                                    <xsl:value-of select="substring-after(descendant::tei/correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"/>
+                                                    <xsl:value-of select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"/>
                                                 </xsl:attribute>
                                                 <xsl:value-of
                                                     select="descendant::tei:correspDesc/tei:correspAction[@type='received']/tei:persName[1]"/>
