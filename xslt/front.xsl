@@ -83,7 +83,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <ul class="list-unstyled sticky border">
+                                <ul class="list-unstyled sticky border" style="text-align: left;">
                                     <xsl:for-each select="//tei:head">
                                         <li>
                                             <xsl:choose>
