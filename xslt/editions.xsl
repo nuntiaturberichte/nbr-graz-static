@@ -13,7 +13,7 @@
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html>
             <head>
-                <xsl:call-template name="html_head"/>
+                <xsl:call-template name="html_head"><xsl:with-param name="html_title" select="$doc_title"></xsl:with-param></xsl:call-template>
                 <style>
                     .card-body {
                         border: 1px solid #dee2e6;
@@ -299,6 +299,16 @@
                                     </div>
                                 </xsl:if>
                             </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="icon-bar mt-4">
+                            <a href="{concat(//tei:TEI/@xml:id, '.pdf')}">
+                                <i class="fas fa-file-pdf fa-2x" title="PDF herunterladen"></i>
+                            </a>
+                            <a href="{concat(//tei:TEI/@xml:id, '.xml')}">
+                                <i class="fas fa-file-code fa-2x" title="XML herunterladen"></i>
+                            </a>
                         </div>
                     </div>
                 </main>
