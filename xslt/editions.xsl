@@ -254,7 +254,7 @@
                                 </xsl:if>
                                 <xsl:if test="//tei:text/tei:body/tei:div/tei:p">
                                     <div id="letter-text-container" class="card-body">
-                                        <h2>Brieftext</h3>
+                                        <h2>Brieftext</h2>
                                         <xsl:for-each select="//tei:text/tei:body/tei:div">
                                             <div id="letter-text">
                                                 <xsl:apply-templates/>
@@ -264,7 +264,7 @@
                                 </xsl:if>
                                 <xsl:if test="//tei:note">
                                     <div id="footnotes-apparatus" class="card-body">
-                                        <h3>Fußnoten</h2>
+                                        <h3>Fußnoten</h3>
                                         <ul class="list-unstyled">
                                             <xsl:for-each select="//tei:note">
                                                 <xsl:if test="@type = 'footnote'">
