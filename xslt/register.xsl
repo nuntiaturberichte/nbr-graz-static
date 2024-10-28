@@ -17,6 +17,8 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
+                <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator.min.css"
+                    rel="stylesheet"/>
                 <style>
                     /* CSS für Zellumbruch */
                     .wrap-cell {
