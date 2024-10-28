@@ -13,7 +13,7 @@
             var combinedDiv = document.createElement('div');
             
             // Füge die Überschrift und den Body-Inhalt in das Div ein
-            combinedDiv.innerHTML = '<h1>' + documentTitle + '</h1>' + letterBody;
+            combinedDiv.innerHTML = '<h1>' + documentTitle + '</h1>' + '<hr/>' + letterBody;
             
             // Wende CSS nur auf das `combinedDiv` an, damit es nur den PDF-Inhalt betrifft
             combinedDiv.style.fontSize = '80%'; // Verkleinere die Schriftgröße nur im PDF-Inhalt
@@ -21,8 +21,8 @@
             // Erstelle ein style-Element, um CSS-Regeln für den PDF-Inhalt hinzuzufügen
             var style = document.createElement('style');
             style.innerHTML = `
-            /* Verhindere das Abschneiden innerhalb dieser Blöcke */
-            h1, h2, h3, p, div, li {
+            /* Verhindere das Abschneiden innerhalb wichtiger Blöcke */
+            h1, h2, h3, h4, h5, h6, p, li, em {
             page-break-inside: avoid;
             }
             `;

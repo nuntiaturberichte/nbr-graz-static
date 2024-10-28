@@ -225,11 +225,13 @@
                                     test="//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:collection">
                                     <div id="msIdentifier" class="card-body">
                                         <h3>Archiv</h3>
-                                        <em>
-                                            <xsl:apply-templates
-                                                select="//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:collection"
-                                            />
-                                        </em>
+                                        <p>
+                                            <em>
+                                                <xsl:apply-templates
+                                                  select="//tei:sourceDesc/tei:msDesc/tei:msIdentifier/tei:collection"
+                                                />
+                                            </em>
+                                        </p>
                                     </div>
                                     <hr/>
                                 </xsl:if>
