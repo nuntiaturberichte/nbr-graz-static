@@ -14,7 +14,11 @@
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html xmlns="http://www.w3.org/1999/xhtml">
             <head>
-                <xsl:call-template name="html_head"><xsl:with-param name="html_title" select="$doc_title"></xsl:with-param></xsl:call-template>
+                <xsl:call-template name="html_head">
+                    <xsl:with-param name="html_title" select="$doc_title"/>
+                </xsl:call-template>
+                <link href="https://unpkg.com/tabulator-tables@6.2.5/dist/css/tabulator.min.css"
+                    rel="stylesheet"/>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
@@ -44,7 +48,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <xsl:for-each select="collection('../data/editions/?select=*.xml')/tei:TEI">
+                                <xsl:for-each
+                                    select="collection('../data/editions/?select=*.xml')/tei:TEI">
                                     <xsl:variable name="full_path">
                                         <xsl:value-of select="document-uri(/)"/>
                                     </xsl:variable>
@@ -52,7 +57,7 @@
                                         <td>
                                             <a>
                                                 <xsl:value-of
-                                                    select="descendant::tei:monogr/tei:biblScope/@n"/>
+                                                  select="descendant::tei:monogr/tei:biblScope/@n"/>
                                             </a>
                                         </td>
                                         <td>
@@ -64,19 +69,25 @@
                                         <td>
                                             <a>
                                                 <xsl:attribute name="href">
-                                                    <xsl:value-of select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"/>
+                                                  <xsl:value-of
+                                                  select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"
+                                                  />
                                                 </xsl:attribute>
                                                 <xsl:value-of
-                                                    select="descendant::tei:correspDesc/tei:correspAction[@type='sent']/tei:persName[1]"/>
+                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]"
+                                                />
                                             </a>
                                         </td>
                                         <td>
                                             <a>
                                                 <xsl:attribute name="href">
-                                                    <xsl:value-of select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"/>
+                                                  <xsl:value-of
+                                                  select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"
+                                                  />
                                                 </xsl:attribute>
                                                 <xsl:value-of
-                                                    select="descendant::tei:correspDesc/tei:correspAction[@type='received']/tei:persName[1]"/>
+                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]"
+                                                />
                                             </a>
                                         </td>
                                         <td>
@@ -100,7 +111,9 @@
                                         <td>
                                             <a>
                                                 <xsl:attribute name="href">
-                                                    <xsl:value-of select="substring-after(descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref, '#')"/>
+                                                  <xsl:value-of
+                                                  select="substring-after(descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref, '#')"
+                                                  />
                                                 </xsl:attribute>
                                                 <xsl:value-of
                                                   select="descendant::tei:correspAction[@type = 'sent']/tei:placeName"
