@@ -45,14 +45,14 @@ jobs:
       - name: Fetch the data
         run: ./fetch_data.sh
       - name: Build the app
-        run: ant
+        run: ./transform.sh
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './html'
+          path: "./html"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
@@ -85,4 +85,3 @@ jobs:
       #     labels: ${{ steps.meta.outputs.labels }}
       #     cache-from: type=gha
       #     cache-to: type=gha,mode=max
-      
