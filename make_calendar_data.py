@@ -10,7 +10,7 @@ out_path = os.path.join("html", "js-data")
 os.makedirs(out_path, exist_ok=True)
 
 # Suche nach XML-Dateien
-files = sorted(glob.glob("../GN/nbr-graz-data/editions/*.xml"))
+files = sorted(glob.glob("./data/editions/*.xml"))
 
 # Definiere die Ausgabe-Datei
 out_file = os.path.join(out_path, "calendarData.js")
