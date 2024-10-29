@@ -1,3 +1,4 @@
+/*** global ***/
 body {
     text-align: justify;
 }
@@ -21,3 +22,16 @@ h4 {
 h5 {
     font-size: 1rem;
 }
+/*** global end ***/
+
+/*** calendar ***/
+#years-table .btn-light:focus, #years-table .btn-light.focus {
+    background: #363636;
+    color: #f8f9fa;
+}
+
+.yearbtn {
+    margin-bottom: 4px;
+}
+/*** calendar end ***/
+

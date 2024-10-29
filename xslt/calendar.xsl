@@ -24,9 +24,9 @@
                 <xsl:call-template name="nav_bar"/>
                 <main>
                     <div class="container-fluid">
-                        <div class="card">
+                        <div class="card mt-4 w-75 mx-auto">
                             <div class="card-header" style="text-align:center">
-                                <h1>Kalender</h1>
+                                <h1 style="display:inline-block;margin-bottom:0;padding-right:5px;">Kalender</h1>
                                 <a style="padding-left:5px;" href="js-data/calendarData.js">
                                     <i class="fas fa-download" title="Kalenderdaten herunterladen"/>
                                 </a>
@@ -57,7 +57,6 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            
                                         </div>
                                     </div>
                                     <div class="col-sm-10">

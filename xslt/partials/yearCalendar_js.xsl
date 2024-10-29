@@ -13,7 +13,7 @@
             
             function createyearcell(val) {
             return (val !== undefined) ? '<div class="col-xs-6" style="width: auto;">' +
-                '<button id="ybtn' + val + '" class="btn btn-light rounded-0 yearbtn" value="' + val + '" onclick="updateyear(this.value)">' + val + '</button>' +
+                '<button id="ybtn' + val + '" class="btn btn-light btn-sm rounded-0 yearbtn" value="' + val + '" onclick="updateyear(this.value)">' + val + '</button>' +
                 '</div>' : '';
             }
             
@@ -24,7 +24,7 @@
             name: r.name,
             linkId: r.id,
             color: r.color
-            })).filter(r => r.startDate.getFullYear() === 1600);  // Zeige standardmäßig das Jahr 1600
+            })).filter(r => r.startDate.getFullYear() === 1580);  // Zeige standardmäßig das Jahr 1600
             
             // Erstelle die Liste der Jahre aus calendarData
             var years = Array.from(new Set(calendarData.map(getYear))).sort();
@@ -37,7 +37,7 @@
             
             // Initialisiere den Kalender mit den gefilterten Daten
             const calendar = new Calendar('#calendar', {
-            startYear: 1600,  // Setze das Startjahr auf 1600
+            startYear: 1580,  // Setze das Startjahr auf 1580
             language: "de",
             dataSource: data,
             displayHeader: false,
@@ -92,7 +92,7 @@
             html += '<div class="modal-dialog" role="document">';
             html += '<div class="modal-content">';
             html += '<div class="modal-header">';
-            html += '<h5 class="modal-title" id="modalLabel">Links</h5>';
+            html += '<h5 class="modal-title" id="modalLabel">Folgende Briefe wurden an diesem Tag versendet:</h5>';
             html += '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>';
             html += '</div><div class="modal-body">';
             let numbersTitlesAndIds = [];
