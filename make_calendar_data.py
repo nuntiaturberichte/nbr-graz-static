@@ -25,8 +25,8 @@ for x in tqdm(files, total=len(files)):
     # Extrahiere den Titel (Name des Ereignisses)
     name = doc.any_xpath('//tei:title[@level="a"]/text()')
     if name:
-        cleaned_name = name[0].replace('\n', ' ')
-        item["name"] = re.sub(r'\s+', ' ', cleaned_name)
+        cleaned_name = name[0].replace("\n", " ")
+        item["name"] = re.sub(r"\s+", " ", cleaned_name)
     else:
         continue  # Wenn kein Titel vorhanden ist, überspringe die Datei
 
@@ -34,7 +34,9 @@ for x in tqdm(files, total=len(files)):
     when_iso = doc.any_xpath('//tei:title[@type="iso-date"]/@when-iso')
     not_before = doc.any_xpath('//tei:title[@type="iso-date"]/@notBefore')
     not_after = doc.any_xpath('//tei:title[@type="iso-date"]/@notAfter')
-    cert = doc.any_xpath('//tei:title[@type="iso-date"]/@cert')  # Prüfe auf das Attribut "cert"
+    cert = doc.any_xpath(
+        '//tei:title[@type="iso-date"]/@cert'
+    )  # Prüfe auf das Attribut "cert"
 
     # Verarbeite @when-iso, @notBefore und @notAfter
     if when_iso:
