@@ -4,7 +4,7 @@ import os
 from typesense.api_call import ObjectNotFound
 from acdh_cfts_pyutils import TYPESENSE_CLIENT as client, CFTS_COLLECTION
 from acdh_tei_pyutils.tei import TeiReader
-from acdh_tei_pyutils.utils import extract_fulltext
+from acdh_tei_pyutils.utils import extract_fulltext, normalize_string
 from tqdm import tqdm
 
 
@@ -96,16 +96,16 @@ for x in tqdm(files, total=len(files)):
     record["sender"] = []
     cfts_record["persons"] = []
     for y in doc.any_xpath(".//tei:correspAction[@type='sent']//tei:persName"):
-        record["sender"].append(y.text)
-        cfts_record["persons"].append(y.text)
+        record["sender"].append(normalize_string(y.text))
+        cfts_record["persons"].append(normalize_string(y.text))
 
     record["receiver"] = []
     cfts_record["persons"] = []
     for y in doc.any_xpath(
         ".//tei:correspAction[@type='received']//tei:persName"
     ):  # noqa:
-        record["receiver"].append(y.text)
-        cfts_record["persons"].append(y.text)
+        record["receiver"].append(normalize_string(y.text))
+        cfts_record["persons"].append(normalize_string(y.text))
 
     record["lecture"] = record["title"].split("(")[0].strip()
     cfts_record["title"] = record["title"]
