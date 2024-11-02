@@ -108,39 +108,33 @@
                                         </h1>
                                     </div>
                                     <!-- MITTE-RECHTS -->
-                                    <div
-                                        class="col-12 col-sm-6 col-lg-2 d-flex justify-content-center">
+                                    <div class="col-12 col-sm-6 col-lg-2 d-flex justify-content-center">
                                         <span style="display: flex; align-items: center;">
                                             <span>
                                                 <xsl:text>Band&#160;</xsl:text>
                                             </span>
-                                            <span class="badge"
-                                                style="margin-right: 10px; background-color: 
-                                                ">
-                                                <xsl:attribute name="style"> background-color: <xsl:choose>
-                                                  <xsl:when
-                                                  test="//tei:biblScope[@unit = 'volume']/@n = '1'">
-                                                  <xsl:text>#1D3557;</xsl:text>
-                                                  </xsl:when>
-                                                  <xsl:when
-                                                  test="//tei:biblScope[@unit = 'volume']/@n = '2'">
-                                                  <xsl:text>#A23E48;</xsl:text>
-                                                  </xsl:when>
-                                                  <xsl:when
-                                                  test="//tei:biblScope[@unit = 'volume']/@n = '3'">
-                                                  <xsl:text>#2C6E49;</xsl:text>
-                                                  </xsl:when>
-                                                  <xsl:when
-                                                  test="//tei:biblScope[@unit = 'volume']/@n = '4'">
-                                                  <xsl:text>#4B0082;</xsl:text>
-                                                  </xsl:when>
-                                                  <xsl:when
-                                                  test="//tei:biblScope[@unit = 'volume']/@n = '5'">
-                                                  <xsl:text>#D17A22;</xsl:text>
-                                                  </xsl:when>
-                                                  </xsl:choose>; </xsl:attribute>
-                                                <xsl:value-of
-                                                  select="//tei:biblScope[@unit = 'volume']/@n"/>
+                                            <span class="badge">
+                                                <xsl:attribute name="style">
+                                                    <xsl:text>margin-right: 10px; color: black; background-color:</xsl:text>
+                                                    <xsl:choose>
+                                                        <xsl:when test="//tei:biblScope[@unit = 'volume']/@n = '1'">
+                                                            <xsl:text>#FBBE9D</xsl:text>
+                                                        </xsl:when>
+                                                        <xsl:when test="//tei:biblScope[@unit = 'volume']/@n = '2'">
+                                                            <xsl:text>#C3E4B4</xsl:text>
+                                                        </xsl:when>
+                                                        <xsl:when test="//tei:biblScope[@unit = 'volume']/@n = '3'">
+                                                            <xsl:text>#DFB5E3</xsl:text>
+                                                        </xsl:when>
+                                                        <xsl:when test="//tei:biblScope[@unit = 'volume']/@n = '4'">
+                                                            <xsl:text>#DCD5D0</xsl:text>
+                                                        </xsl:when>
+                                                        <xsl:when test="//tei:biblScope[@unit = 'volume']/@n = '5'">
+                                                            <xsl:text>#C7EAF9</xsl:text>
+                                                        </xsl:when>
+                                                    </xsl:choose>
+                                                </xsl:attribute>
+                                                <xsl:value-of select="//tei:biblScope[@unit = 'volume']/@n" />
                                             </span>
                                         </span>
                                     </div>
