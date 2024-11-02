@@ -44,7 +44,7 @@
                                                 <div class="row justify-content-md-center" id="years-table"
                                                 />
                                             </div>
-                                            <div class="col-sm-12">
+                                            <div class="col-sm-12 mt-4">
                                                 <p>Datum ist</p>
                                                 <ul class="list-unstyled">
                                                     <li>
