@@ -5,6 +5,7 @@
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
     <xsl:import href="./partials/tabulator_js.xsl"/>
+    <xsl:import href="./partials/register_pop_up_js.xsl"/>
 
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:strip-space elements="*"/>
@@ -41,17 +42,45 @@
                         animation: spin 1s infinite linear;
                         z-index: 1000;
                     }
-                    
                     @keyframes spin {
-                to { transform: rotate(360deg); }
-                }
-                    
+                    to { transform: rotate(360deg); }
+                    }
                     #tabulator-table-wrapper {
                         display: none;
                     }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
+                <div class="modal fade" id="infoModal" tabindex="-1"
+                    aria-labelledby="infoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="infoModalLabel">Hinweis</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"/>
+                            </div>
+                            <div class="modal-body">
+                                <p>Da in den Büchern mehrere Briefe auf einer Seite vorkommen
+                                    können, war es nicht ohne weiteres möglich, die Seitenzahlen in
+                                    Briefnummern umzuwandeln. Eine solche Umwandlung hätte es
+                                    ermöglicht, im Register auf die Briefnummern statt auf die
+                                    Seitenzahlen zu verweisen, was dem digitalen Format der Edition
+                                    besser entsprochen hätte.</p>
+                                <p>Die Links im Register verweisen nun auf die gelb hinterlegten
+                                    Seitenzahlen in der Briefansicht. Diese sind genau an jenen
+                                    Stellen eingefügt, an denen die Seitenzahlen im Fließtext des
+                                    Buches erscheinen. Durch Anklicken einer Seitenzahl im Register
+                                    wird jener Brief angezeigt, der diese Seitenzahl enthält. Wenn
+                                    der gesuchte Inhalt nicht im angezeigten Brief enthalten ist,
+                                    kann dies daran liegen, dass im Buch auf dieser Seite mehrere
+                                    Briefe abgedruckt sind. In diesem Fall sollte die Suche im
+                                    nächsten Brief fortgesetzt werden. Die gesuchte Entität sollte
+                                    bis zur nächsten Seitenzahl aufgefunden werden.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <main>
                     <div class="my-4" style="text-align:center">
                         <h1>Register</h1>
@@ -76,27 +105,12 @@
                                 <xsl:apply-templates select="//tei:body/tei:list/tei:item"/>
                             </tbody>
                         </table>
-                        <p style="font-style: italic;">Hinweis: Da in den Büchern mehrere Briefe auf
-                            einer Seite vorkommen können, war es nicht ohne weiteres möglich, die
-                            Seitenzahlen in Briefnummern umzuwandeln. Eine solche Umwandlung hätte
-                            es jedoch ermöglicht, im Register auf die Briefnummern statt auf die
-                            Seitenzahlen zu verweisen, was dem digitalen Format der Edition besser
-                            entsprochen hätte. Da dies nicht möglich war, bleiben die Seitenzahlen
-                            als Links im Register erhalten. Diese Links verweisen auf bestimmte
-                                <code>a@id</code>-Elemente im HTML-Code der Briefe. Diese Elemente
-                            sind genau an den Stellen eingefügt, an denen die Seitenzahlen im
-                            Fließtext des Buches erscheinen. Durch Anklicken einer Seitenzahl im
-                            Register wird der entsprechende Brief angezeigt, der diese Seitenzahl im
-                            Buch enthält. Wenn der gesuchte Inhalt nicht in dem angezeigten Brief
-                            enthalten ist, kann dies daran liegen, dass im Buch auf dieser Seite
-                            mehrere Briefe abgedruckt sind. In diesem Fall sollte die Suche im
-                            nächsten Brief fortgesetzt werden. Die gesuchte Entität sollte bis zum
-                            nächsten <code>a@id</code>-Element aufgefunden werden.</p>
                     </div>
                     <xsl:call-template name="html_tabulator_dl_buttons"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
                 <xsl:call-template name="tabulator_js_register"/>
+                <xsl:call-template name="register_pop_up"/>
             </body>
         </html>
     </xsl:template>
