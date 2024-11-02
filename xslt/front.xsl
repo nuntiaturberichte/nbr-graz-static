@@ -8,13 +8,71 @@
 
     <xsl:template match="/">
         <xsl:variable name="doc_title">
-            <xsl:value-of select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level='a']"/>
+            <xsl:value-of
+                select="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@level = 'a']"/>
         </xsl:variable>
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html>
             <head>
-                <xsl:call-template name="html_head"><xsl:with-param name="html_title" select="$doc_title"></xsl:with-param></xsl:call-template>
+                <xsl:call-template name="html_head">
+                    <xsl:with-param name="html_title" select="$doc_title"/>
+                </xsl:call-template>
                 <style>
+                    /* Inhaltsverzeichnis */
+                    .sticky {
+                        position: -webkit-sticky; /* Safari */
+                        position: sticky;
+                        top: 20px; /* Abstand vom oberen Rand */
+                    }
+                    
+                    .list-unstyled.border {
+                        background-color: #f2f2f2; /* Hellgrauer Hintergrund passend zu Weiß */
+                        border: 1px solid #ddd; /* Leichter grauer Rand */
+                        padding: 15px;
+                        border-radius: 5px;
+                    }
+                    
+                    .list-unstyled.border a {
+                        display: block;
+                        color: #333; /* Dunklere Textfarbe für besseren Kontrast */
+                        padding: 8px 12px;
+                        text-decoration: none;
+                        font-weight: 500;
+                        transition: background-color 0.3s, color 0.3s;
+                    }
+                    
+                    .list-unstyled.border a:hover {
+                        background-color: #474747; /* Sanfte Blau-Hervorhebung */
+                        color: #EBEBEB; /* Dunklerer Blauton für Text */
+                        border-radius: 5px; /* Runde Ecken bei Hover */
+                    }
+                    
+                    .list-unstyled.border a:active {
+                        background-color: #858585;
+                        color: #f2f2f2;
+                    }
+                    .list-unstyled.border .indent-2 {
+                        font-size: 0.9em;
+                    }
+                    /* Inhaltsverzeichnis-Ende */
+                    
+                    /* Fließtext */
+                    .con-text.border {
+                        border: 1px solid #ddd; /* Leichter grauer Rand */
+                        padding: 15px;
+                        border-radius: 5px;
+                        margin-bottom: 15px;
+                        background-color: #ffffff; /* Weiß */
+                    }
+                    
+                    .con-text.border > .con-text.border {
+                        border: 1px solid #ddd;
+                        padding: 15px;
+                        border-radius: 5px;
+                        margin-bottom: 15px;
+                        background-color: #f9f9f9;
+                    }
+                    
                     .indent-2 {
                         margin-left: 2em;
                     }
@@ -27,15 +85,12 @@
                     .indent-8 {
                         margin-left: 8em;
                     }
-                    .sticky {
-                        position: -webkit-sticky; /* Safari */
-                        position: sticky;
-                        top: 20px; /* Abstand vom oberen Rand */
-                    }
+                    /* Fließtext-Ende */
+                    
+                    /* Tabelle */
                     table {
                         width: 100%;
                         border-collapse: collapse;
-                        margin-bottom: 20px;
                     }
                     
                     table th,
@@ -46,7 +101,7 @@
                     }
                     
                     table th {
-                        background-color: #f8f9fa;
+                        background-color: #CCCCCC;
                     }
                     
                     table tr:nth-child(even) {
@@ -57,18 +112,7 @@
                         color: #007bff;
                         text-decoration: none;
                     }
-                    
-                    table a:hover {
-                        text-decoration: underline;
-                    }
-                    .border {
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    padding: 10px;
-                    width: fit-content;
-                    }
-                    
-                </style>
+                    /* Tabelle-Ende */</style>
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
                     rel="stylesheet"/>
             </head>
@@ -83,65 +127,64 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <ul class="list-unstyled sticky border" style="text-align: left;">
-                                    <xsl:for-each select="//tei:head">
-                                        <li>
-                                            <xsl:choose>
-                                                <xsl:when test="@n = '1'">
+                                <div class="sticky">
+                                    <h4>Inhaltsverzeichnis</h4>
+                                    <ul class="list-unstyled border" style="text-align: left;">
+                                        <xsl:for-each select="//tei:head">
+                                            <li>
+                                                <xsl:choose>
+                                                  <xsl:when test="@n = '1'">
                                                   <a>
                                                   <xsl:attribute name="href">#<xsl:value-of
                                                   select="@xml:id"/>
                                                   </xsl:attribute>
-                                                  <xsl:apply-templates/>
+                                                  <xsl:value-of select="string(.)"/>
                                                   </a>
-                                                </xsl:when>
-                                                <xsl:when test="@n = '2'">
+                                                  </xsl:when>
+                                                  <xsl:when test="@n = '2'">
                                                   <a class="indent-2">
                                                   <xsl:attribute name="href">#<xsl:value-of
                                                   select="@xml:id"/>
                                                   </xsl:attribute>
-                                                  <xsl:apply-templates/>
+                                                  <xsl:value-of select="string(.)"/>
                                                   </a>
-                                                </xsl:when>
-                                                <xsl:when test="@n = '3'">
-                                                  <a class="indent-4">
-                                                  <xsl:attribute name="href">#<xsl:value-of
-                                                  select="@xml:id"/>
-                                                  </xsl:attribute>
-                                                  <xsl:apply-templates/>
-                                                  </a>
-                                                </xsl:when>
-                                            </xsl:choose>
+                                                  </xsl:when>
+                                                </xsl:choose>
+                                            </li>
+                                        </xsl:for-each>
+                                        <li>
+                                            <a href="#fnApp">Fußnotenapparat</a>
                                         </li>
-                                    </xsl:for-each>
-                                    <li>
-                                        <a href="#fnApp">Fußnotenapparat</a>
-                                    </li>
-                                </ul>
+                                    </ul>
+                                </div>
+
                             </div>
                             <div class="col-md-9">
-                                <xsl:apply-templates select="//tei:body"/>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 id="fnApp">Fußnotenapparat</h2>
-                                <ul class="list-unstyled">
-                                    <xsl:for-each select="//tei:note">
-                                        <xsl:variable name="fnSign"
-                                            select="number(substring-after(@xml:id, '_'))"/>
-                                        <xsl:variable name="fnId" select="@xml:id"/>
-                                        <li id="{$fnId}_app">
-                                            <sup>
-                                                <span class="badge bg-primary">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <xsl:apply-templates select="//tei:body"/>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h2 id="fnApp">Fußnotenapparat</h2>
+                                        <ul class="list-unstyled">
+                                            <xsl:for-each select="//tei:note">
+                                                <xsl:variable name="fnSign"
+                                                  select="number(substring-after(@xml:id, '_'))"/>
+                                                <xsl:variable name="fnId" select="@xml:id"/>
+                                                <li id="{$fnId}_app">
+                                                  <sup>
+                                                  <span class="badge bg-primary">
                                                   <xsl:value-of select="number($fnSign)"/>
-                                                </span>
-                                            </sup>&#160;<xsl:value-of select="normalize-space(.)"
-                                            /><a href="#{$fnId}_con">&#160;<i class="bi bi-arrow-up"
-                                                /></a>
-                                        </li>
-                                    </xsl:for-each>
-                                </ul>
+                                                  </span>
+                                                  </sup>&#160;<xsl:value-of
+                                                  select="normalize-space(.)"/><a
+                                                  href="#{$fnId}_con">&#160;<i
+                                                  class="bi bi-arrow-up"/></a>
+                                                </li>
+                                            </xsl:for-each>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,7 +194,7 @@
     </xsl:template>
 
     <xsl:template match="tei:div">
-        <div class="border">
+        <div class="con-text border">
             <xsl:apply-templates/>
         </div>
     </xsl:template>
@@ -241,7 +284,7 @@
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template match="tei:table">
+    <xsl:template match="tei:table[@type = 'with-head']">
         <table>
             <xsl:for-each select="tei:row">
                 <tr>
@@ -259,6 +302,29 @@
                             </td>
                         </xsl:for-each>
                     </xsl:if>
+                </tr>
+            </xsl:for-each>
+        </table>
+    </xsl:template>
+
+    <xsl:template match="tei:table[@type = 'without-head']">
+        <table>
+            <xsl:for-each select="tei:row">
+                <tr>
+                    <xsl:for-each select="tei:cell">
+                        <xsl:choose>
+                            <xsl:when test="@cols">
+                                <td colspan="{@cols}">
+                                    <xsl:value-of select="."/>
+                                </td>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <td>
+                                    <xsl:value-of select="."/>
+                                </td>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:for-each>
                 </tr>
             </xsl:for-each>
         </table>
