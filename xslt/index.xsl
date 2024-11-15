@@ -134,8 +134,12 @@
         <h2><xsl:value-of select="."/></h2>
     </xsl:template>
     
-    <xsl:template match="tei:list">
+    <xsl:template match="tei:list[@type='unordered']">
         <ul><xsl:apply-templates/></ul>
+    </xsl:template>
+    
+    <xsl:template match="tei:list[@type='ordered']">
+        <ol><xsl:apply-templates/></ol>
     </xsl:template>
     
     <xsl:template match="tei:item">
