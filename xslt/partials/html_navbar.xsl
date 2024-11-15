@@ -40,6 +40,27 @@
                                     </li>
                                 </ul>
                             </li>
+                            
+                            <li class="nav-item dropdown disabled">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">Technisches</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="kodierungsrichtlinien.html"
+                                            >Kodierungsrichtlinien</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="arbeitsablauf.html">Arbeitsablauf</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-data">Quelldaten auf
+                                            GitHub</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-static">App auf GitHub</a>
+                                    </li>
+                                </ul>
+                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button"
@@ -74,27 +95,6 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="register.html">Register</a>
-                            </li>
-
-                            <li class="nav-item dropdown disabled">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Technisches</a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="kodierungsrichtlinien.html"
-                                            >Kodierungsrichtlinien</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="arbeitsablauf.html">Arbeitsablauf</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-data">Quelldaten auf
-                                            GitHub</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="https://github.com/nuntiaturberichte/nbr-graz-static">App auf GitHub</a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <li class="nav-item">

@@ -158,24 +158,24 @@
                 <xsl:apply-templates select="tei:ref"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-1')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/1/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-1')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L1')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-2')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/2/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-2')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L2')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-3')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/3/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-3')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L3')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-4')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/4/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-4')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L4')]"/>
             </td>
             <td>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'meta/fronts/front-5')]"/>
-                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'editions/5/')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'front-5')]"/>
+                <xsl:apply-templates select="tei:rs[starts-with(@ref, 'L5')]"/>
             </td>
         </tr>
     </xsl:template>
@@ -189,9 +189,18 @@
 
     <xsl:template match="tei:rs">
         <!-- Get the part before the .xml and after .xml (if any) -->
-        <a href="{concat(substring-before(@ref, '.xml'), '.html', substring-after(@ref, '.xml'))}">
-            <xsl:value-of select="."/>
-        </a>
+        <xsl:choose>
+            <xsl:when test="contains(@ref, '#P')">
+                <a href="{concat(substring-before(@ref, '.xml'), '.html', substring-after(@ref, '.xml'))}">
+                    <xsl:value-of select="."/>
+                </a>
+            </xsl:when>
+            <xsl:when test="contains(@ref, '#FN')">
+                <a href="{concat(substring-before(@ref, '.xml'), '.html', substring-after(@ref, '.xml'), '_con')}">
+                    <xsl:value-of select="."/>
+                </a>
+            </xsl:when>
+        </xsl:choose>
         <xsl:if test="following-sibling::tei:rs">
             <xsl:text>, </xsl:text>
         </xsl:if>
