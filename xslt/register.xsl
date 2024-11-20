@@ -196,7 +196,7 @@
                 </a>
             </xsl:when>
             <xsl:when test="contains(@ref, '#FN')">
-                <a href="{concat(substring-before(@ref, '.xml'), '.html', substring-after(@ref, '.xml'), '_con')}">
+                <a href="{concat(substring-before(@ref, '.xml'), '.html', substring-after(@ref, '.xml'), '_app')}">
                     <xsl:value-of select="."/>
                 </a>
             </xsl:when>
