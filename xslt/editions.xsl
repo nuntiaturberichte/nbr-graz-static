@@ -366,7 +366,7 @@
     </xsl:template>
 
     <xsl:template match="tei:note[@type = 'siglum']">
-        <xsl:variable name="sSign" select="substring-after(@xml:id, '_')"/>
+        <xsl:variable name="sSign" select="substring-after(substring-after(@xml:id, '_'), '_')"/>
         <xsl:variable name="sId" select="@xml:id"/>
         <a class="siglum" id="{$sId}_con" href="#{$sId}_app">
             <sup>
