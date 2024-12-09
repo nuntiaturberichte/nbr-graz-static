@@ -39,7 +39,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-sm-2 yearscol">
+                                    <div class="col-sm-2 yearscol" style="width: 18%;">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <p
@@ -65,7 +65,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-10" style="width: 80%;">
                                         <div id="calendar"/>
                                     </div>
                                 </div>
