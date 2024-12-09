@@ -131,7 +131,6 @@
                             </tbody>
                         </table>
                     </div>
-
                     <xsl:call-template name="html_tabulator_dl_buttons"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
