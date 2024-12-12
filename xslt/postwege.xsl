@@ -29,6 +29,28 @@
                         justify-content: center;
                         position: relative;
                         align-items: center;
+                    }
+                    #loader {
+                        position: fixed;
+                        left: 50%;
+                        top: 50%;
+                        width: 50px;
+                        height: 50px;
+                        margin-left: -25px;
+                        margin-top: -25px;
+                        border: 4px solid rgba(0, 0, 0, .1);
+                        border-radius: 50%;
+                        border-top-color: #3498db;
+                        animation: spin 1s infinite linear;
+                        z-index: 1000;
+                    }
+                    @keyframes spin {
+                    to { transform: rotate(360deg); }
+                    }
+                    
+                    /* Tabelle */
+                    .tabulator-tableholder {
+                        overflow-x: hidden !important;
                     }</style>
             </head>
             <body>
@@ -45,6 +67,7 @@
                             </span>
                         </div>
                     </div>
+                    <div id="loader"/>
                     <div style="display: block; justify-content: center; margin: 0 2em;"
                         id="tabulator-table-wrapper">
                         <table class="table table-sm display" id="tabulator-table-postwege">
@@ -61,7 +84,7 @@
                             </thead>
                             <tbody>
                                 <xsl:for-each
-                                    select="collection('../data/editions/?select=*.xml')/tei:TEI">
+                                    select="collection('../../GN/nbr-graz-data/editions/?select=*.xml')/tei:TEI">
                                     <xsl:variable name="full_path">
                                         <xsl:value-of select="document-uri(/)"/>
                                     </xsl:variable>
@@ -89,7 +112,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref"
+                                                  select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref, '#')"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -101,7 +124,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref"
+                                                  select="substring-after(descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref, '#')"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -118,7 +141,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                  select="descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref"
+                                                  select="substring-after(descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref, '#')"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -131,6 +154,7 @@
                             </tbody>
                         </table>
                     </div>
+
                     <xsl:call-template name="html_tabulator_dl_buttons"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
