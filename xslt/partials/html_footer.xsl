@@ -56,7 +56,7 @@
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
                             <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;"
-                                >Helpdesc</h6>
+                                >Helpdesk</h6>
                             <p>Bei Fragen, Anmerkungen, Kritik, aber gerne auch Lob, wenden Sie sich
                                 bitte an den ACDH-CH Helpdesk oder an den
                                 Projektverantwortlichen.</p>
@@ -76,7 +76,7 @@
             <!-- Copyright -->
             <div class="text-center p-4" style="border: 1px solid #666; background-color: #E0E0E0">
                 © Copyright: <a class="text-reset fw-bold" href="https://www.oeaw.ac.at/">OEAW</a> |
-                    <a class="text-reset fw-bold" href="...">Impressum</a>
+                    <a class="text-reset fw-bold" href="imprint.html">Impressum</a>
             </div>
             <!-- Copyright -->
         </footer>
