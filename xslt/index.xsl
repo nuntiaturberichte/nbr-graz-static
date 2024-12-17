@@ -20,7 +20,7 @@
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
                 <meta name="description"
-                    content="Recherchieren Sie in der digitalen Edition der Grazer Nuntiaturberichte, der frei zugänglichen Korrespondenz des päpstlichen Gesandten in Innerösterreich zur Zeit der Gegenreformation."
+                    content="Recherchieren Sie in der frei zugänglichen Korrespondenz des päpstlichen Gesandten in Innerösterreich zur Zeit der Gegenreformation."
                 />
             </head>
             <body class="d-flex flex-column h-100">
@@ -39,12 +39,13 @@
                                 <p class="text-end">Herausgegeben von Johann Rainer und Elisabeth
                                     Zingerle</p>
                                 <p class="lead">
-                                    <xsl:apply-templates select="//tei:body//tei:p"/>
+                                    <xsl:apply-templates select="//tei:body//tei:p[@style = 'big']"
+                                    />
                                 </p>
+                                <xsl:apply-templates select="//tei:body//tei:p[@style = 'info']"/>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <a href="search.html" type="button"
-                                        class="btn btn-dark btn-lg px-4 me-md-2"
-                                        >Volltextsuche</a>
+                                        class="btn btn-dark btn-lg px-4 me-md-2">Volltextsuche</a>
                                     <a href="toc.html" type="button"
                                         class="btn btn-outline-dark btn-lg px-4">Zur
                                         Korrespondenz</a>
@@ -61,10 +62,15 @@
         </html>
     </xsl:template>
 
+    <xsl:template match="tei:p[@style = 'small']">
+        <p>
+            <xsl:apply-templates select="."/>
+        </p>
+    </xsl:template>
+
     <xsl:template match="tei:figure">
         <figure class="figure">
-            <img class="d-block mx-lg-auto img-fluid rounded"
-                loading="lazy">
+            <img class="d-block mx-lg-auto img-fluid rounded" loading="lazy">
                 <xsl:attribute name="src">
                     <xsl:value-of select="@source"/>
                 </xsl:attribute>
