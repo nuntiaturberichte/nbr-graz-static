@@ -326,7 +326,7 @@
                                     </div>
                                     <div class="col-12 col-md-4 d-flex justify-content-center">
                                         <a
-                                            href="https://nuntiaturberichte.github.io/nbr-graz-static/{concat(//tei:TEI/@xml:id, '.xml')}"
+                                            href="https://grazer-nuntiatur.acdh.oeaw.ac.at/{concat(//tei:TEI/@xml:id, '.xml')}"
                                             target="_blank" style="color: black;">
                                             <i class="fas fa-file-code fa-2x"
                                                 title="XML herunterladen"/>&#160;<xsl:value-of
