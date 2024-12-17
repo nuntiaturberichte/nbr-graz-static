@@ -38,11 +38,8 @@
                                 </h1>
                                 <p class="text-end">Herausgegeben von Johann Rainer und Elisabeth
                                     Zingerle</p>
-                                <p class="lead">
-                                    <xsl:apply-templates select="//tei:body//tei:p[@style = 'big']"
-                                    />
-                                </p>
-                                <xsl:apply-templates select="//tei:body//tei:p[@style = 'info']"/>
+                                <xsl:apply-templates select="//tei:body//tei:p[@style = 'big']"/>
+                                <xsl:apply-templates select="//tei:body//tei:p[@style = 'small']"/>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <a href="search.html" type="button"
                                         class="btn btn-dark btn-lg px-4 me-md-2">Volltextsuche</a>
@@ -61,10 +58,16 @@
             </body>
         </html>
     </xsl:template>
+    
+    <xsl:template match="tei:p[@style = 'big']">
+        <p class="lead">
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
 
     <xsl:template match="tei:p[@style = 'small']">
         <p>
-            <xsl:apply-templates select="."/>
+            <xsl:apply-templates/>
         </p>
     </xsl:template>
 
