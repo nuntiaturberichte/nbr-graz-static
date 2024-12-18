@@ -58,12 +58,9 @@
                             <h6 class="text-uppercase fw-bold mb-4" style="text-align: center;"
                                 >Helpdesk</h6>
                             <p>Bei Fragen, Anmerkungen, Kritik, aber gerne auch Lob, wenden Sie sich
-                                bitte an den ACDH-CH Helpdesk oder an den
-                                Projektverantwortlichen.</p>
+                                bitte an den ACDH-CH Helpdesk</p>
                             <p>E: <a href="mailto:acdh-ch-helpdesk@oeaw.ac.at"
-                                    >acdh-ch-helpdesk@oeaw.ac.at</a><br/> E: <a
-                                    href="mailto:kroissenbrunner.martin@gmail.com"
-                                    >kroissenbrunner.martin@gmail.com</a></p>
+                                    >acdh-ch-helpdesk@oeaw.ac.at</a></p>
                             <p>Sie können auch gerne Issues im <a
                                     href="https://github.com/nuntiaturberichte/nbr-graz-static"
                                     >GitHub-Repository</a> erstellen.</p>
