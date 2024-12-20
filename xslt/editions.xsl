@@ -380,7 +380,7 @@
     <xsl:template match="tei:note[@type = 'footnote']">
         <xsl:variable name="fnSign" select="substring-after(substring-after(@xml:id, '_'), '_')"/>
         <xsl:variable name="fnId" select="@xml:id"/>
-        <a class="footnote" id="{$fnId}_con" href="#{$fnId}_app">
+        <a class="footnote" id="{$fnId}_con" href="#{$fnId}_app" title="{normalize-space(.)}">
             <sup>
                 <span class="badge bg-primary">
                     <xsl:value-of select="number($fnSign)"/>
@@ -392,7 +392,7 @@
     <xsl:template match="tei:note[@type = 'siglum']">
         <xsl:variable name="sSign" select="substring-after(substring-after(@xml:id, '_'), '_')"/>
         <xsl:variable name="sId" select="@xml:id"/>
-        <a class="siglum" id="{$sId}_con" href="#{$sId}_app">
+        <a class="siglum" id="{$sId}_con" href="#{$sId}_app" title="{normalize-space(.)}">
             <sup>
                 <span class="badge bg-primary">
                     <xsl:value-of select="$sSign"/>
