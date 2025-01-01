@@ -140,6 +140,10 @@
             <xsl:value-of select="."/>
         </code>
     </xsl:template>
+    
+    <xsl:template match="tei:gi">
+        <code><xsl:apply-templates/></code>
+    </xsl:template>
 
     <xsl:template match="tei:lb">
         <br/>
