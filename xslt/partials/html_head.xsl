@@ -6,9 +6,10 @@
     <xsl:include href="./params.xsl"/>
     <xsl:template match="/" name="html_head">
         <xsl:param name="html_title" select="$project_short_title"/>
-        <xsl:variable name="html_title1"><!-- brachialer Eingriff für index -->
+        <xsl:variable name="html_title1">
+            <!-- brachialer Eingriff für index -->
             <xsl:choose>
-                <xsl:when test="$html_title='Meta' or $html_title='meta'">
+                <xsl:when test="$html_title = 'Meta' or $html_title = 'meta'">
                     <xsl:text>grazer-nuntiaturberichte</xsl:text>
                 </xsl:when>
                 <xsl:otherwise>
@@ -24,6 +25,8 @@
         <meta name="apple-mobile-web-app-title" content="{$html_title1}"/>
         <meta name="msapplication-TileColor" content="#ffffff"/>
         <meta name="msapplication-TileImage" content="{$project_logo}"/>
+        <meta name="keywords"
+            content="Grazer Nuntiatur, Nuntiaturberichte, digitale Edition, Gegenreformation, Innerösterreich, historische Korrespondenz, 16. Jahrhundert, 17. Jahrhundert, österreichische Geschichte"/>
         <link rel="icon" type="image/svg+xml" href="{$project_logo}" sizes="any"/>
         <link rel="shortcut icon" href="./images/favicon/siegel_16x16.png"/>
         <link rel="shortcut icon" href="./images/favicon/siegel_32x32.png"/>
@@ -37,13 +40,14 @@
         <link rel="apple-touch-icon" sizes="144x144" href="./images/favicon/siegel_144x144.png"/>
         <link rel="apple-touch-icon" sizes="152x152" href="./images/favicon/siegel_152x152.png"/>
         <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/siegel_180x180.png"/>
-        <link rel="icon" type="image/png" sizes="192x192"
-            href="./images/favicon/siegel_192x192.png"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/siegel_192x192.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/siegel_32x32.png"/>
         <link rel="icon" type="image/png" sizes="96x96" href="./images/favicon/siegel_96x96.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/siegel_16x16.png"/>
         <link rel="profile" href="http://gmpg.org/xfn/11"/>
-        <title><xsl:value-of select="$html_title1"/></title>
+        <title>
+            <xsl:value-of select="$html_title1"/>
+        </title>
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
             integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -57,10 +61,10 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous"/>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"/>
         <link rel="stylesheet" href="./css/style.css" type="text/css"/>
         <!-- Matomo -->
-<script>
+        <script>
   var _paq = window._paq = window._paq || [];
   /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['trackPageView']);
@@ -73,8 +77,8 @@
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Matomo Code -->
+        <!-- End Matomo Code -->
 
-        
+
     </xsl:template>
 </xsl:stylesheet>
