@@ -19,6 +19,8 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
+                <meta name="google-site-verification"
+                    content="nRhcEVFXM70VW4hRGGQVvvaTZ1yOkboMocYW99bO92E"/>
                 <meta name="description"
                     content="Recherchieren Sie in der frei zugänglichen Korrespondenz des päpstlichen Gesandten in Innerösterreich zur Zeit der Gegenreformation."
                 />
@@ -58,7 +60,7 @@
             </body>
         </html>
     </xsl:template>
-    
+
     <xsl:template match="tei:p[@style = 'big']">
         <p class="lead">
             <xsl:apply-templates/>
