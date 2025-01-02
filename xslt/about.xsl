@@ -254,6 +254,10 @@
         </xsl:choose>
     </xsl:template>
 
+    <xsl:template match="tei:gi">
+        <code><xsl:apply-templates/></code>
+    </xsl:template>
+
     <xsl:template match="tei:head">
         <h2>
             <xsl:value-of select="."/>
