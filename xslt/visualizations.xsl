@@ -72,7 +72,7 @@
                         <div class="iframe-container">
                             <iframe
                                 src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                                scrolling="yes" sandbox="allow-scripts allow-same-origin"/>
+                                scrolling="yes"/>
                         </div>
                         <div class="button-container">
                             <span id="tooltip" title="Hinweis">
