@@ -17,6 +17,9 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
+                <link
+                    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+                    rel="stylesheet"/>
                 <style>
                     main {
                         display: flex;
@@ -44,6 +47,25 @@
                         position: relative;
                         width: 100%;
                         height: 800px;
+                    }
+                    
+                    .button-container {
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        align-items: center;
+                    }
+                    
+                    .collapse-overlay {
+                        position: absolute;
+                        top: 175px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        z-index: 100;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        border: 1px solid black;
+                        border-radius: 6px;
+                        max-width: 400px;
                     }</style>
             </head>
             <body>
@@ -55,13 +77,15 @@
                                 src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
                                 scrolling="yes" sandbox="allow-scripts allow-same-origin"/>
                         </div>
-                        <span id="tooltip" title="Hinweis">
-                            <button class="btn btn-collapse btn-lg" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                                aria-expanded="false" aria-controls="collapseExample">
-                                <i class="bi bi-info-square-fill"/>
-                            </button>
-                        </span>
+                        <div class="button-container">
+                            <span id="tooltip" title="Hinweis">
+                                <button class="btn btn-collapse btn-lg" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                    aria-expanded="false" aria-controls="collapseExample">
+                                    <i class="bi bi-info-square-fill"/>
+                                </button>
+                            </span>
+                        </div>
                         <div class="collapse collapse-overlay" id="collapseExample">
                             <div class="card">
                                 <div class="card-header">Hinweis zu den Visualisierungen</div>
