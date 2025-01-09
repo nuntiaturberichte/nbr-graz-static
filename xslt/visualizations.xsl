@@ -4,10 +4,10 @@
     <xsl:import href="./partials/html_head.xsl"/>
     <xsl:import href="./partials/html_navbar.xsl"/>
     <xsl:import href="./partials/html_footer.xsl"/>
-    
+
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
     <xsl:strip-space elements="*"/>
-    
+
     <xsl:template match="/">
         <xsl:variable name="doc_title" select="'Visualisierungen'"/>
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
@@ -20,13 +20,10 @@
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main>
-                    <iframe 
-                    src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0" 
-                    width="100%" 
-                    height="800" 
-                    frameborder="0" 
-                    allowfullscreen>
-                </iframe>
+                    <iframe
+                        src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                        width="100%" height="800" frameborder="0" allowfullscreen="allowfullscreen"
+                    />
                 </main>
                 <xsl:call-template name="html_footer"/>
             </body>
