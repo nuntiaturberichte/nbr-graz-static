@@ -22,8 +22,8 @@
                 <main>
                     <iframe
                         src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                        width="100%" height="800" frameborder="0" allowfullscreen="allowfullscreen"
-                    />
+                        width="100%" height="800" frameborder="0"
+                        sandbox="allow-scripts allow-same-origin"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
             </body>
