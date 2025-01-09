@@ -9,7 +9,7 @@
     <xsl:output method="html" encoding="UTF-8" indent="yes"/>
 
     <xsl:template match="/">
-        <xsl:variable name="doc_title" select="'Kalendar'"/>
+        <xsl:variable name="doc_title" select="'Kalender'"/>
         <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
         <html lang="de">
             <head>
