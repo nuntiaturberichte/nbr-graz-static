@@ -37,6 +37,13 @@
                         sandbox="allow-scripts allow-same-origin"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
+                <script>document.addEventListener('DOMContentLoaded', () => {
+                    document.querySelectorAll('nav.cs-navbar, footer.cs-footer')
+                    .forEach(el => {
+                    el.style.display = 'none';
+                    });
+                    });
+                </script>
             </body>
         </html>
     </xsl:template>
