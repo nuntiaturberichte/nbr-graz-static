@@ -16,25 +16,27 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
+                <style>
+                    main {
+                        display: flex;
+                        justify-content: center; /* Horizontal zentrieren */
+                        align-items: center; /* Vertikal zentrieren */
+                        height: 100vh; /* Container auf volle Höhe setzen */
+                    }
+                    iframe {
+                        width: 80%;
+                        height: 800px;
+                        border: 1px solid black;
+                    }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main>
                     <iframe
                         src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                        width="80%" height="800" style="border: 1px solid black;"
                         sandbox="allow-scripts allow-same-origin"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                    document.querySelectorAll('nav.navbar-dark, footer.text-muted')
-                    .forEach(el => {
-                    el.style.display = 'none';
-                    });
-                    });
-                </script>
-
             </body>
         </html>
     </xsl:template>
