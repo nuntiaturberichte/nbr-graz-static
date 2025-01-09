@@ -21,7 +21,7 @@
                         display: flex;
                         justify-content: center; /* Horizontal zentrieren */
                         align-items: center; /* Vertikal zentrieren */
-                        padding-top: 50px; /* Container auf volle Höhe setzen */
+                        padding-top: 7px;
                     }
                     
                     .iframe-container {
@@ -31,6 +31,7 @@
                         border-radius: 20px;
                         border: 1px solid black;
                         margin: 0 auto; /* Optional: Centering the iframe */
+                        overflow: hidden;
                     }
                     
                     iframe {
@@ -42,13 +43,12 @@
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0">
-                    <div class="container">
-                        <div class="iframe-container">
-                            <iframe
-                                src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                                scrolling="yes"/>
-                        </div>
+                    <div class="iframe-container">
+                        <iframe
+                            src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                            scrolling="yes"/>
                     </div>
+
                 </main>
                 <xsl:call-template name="html_footer"/>
             </body>
