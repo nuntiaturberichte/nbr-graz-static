@@ -21,14 +21,13 @@
                         display: flex;
                         justify-content: center; /* Horizontal zentrieren */
                         align-items: center; /* Vertikal zentrieren */
-                        height: 100vh; /* Container auf volle Höhe setzen */
+                        padding-top: 50px; /* Container auf volle Höhe setzen */
                     }
                     
                     .iframe-container {
                         position: relative;
                         width: 80%;
-                        height: 700px; /* Visible height excluding navbar/footer */
-                        overflow: hidden; /* Hide the unwanted parts */
+                        height: 800px; /* Visible height excluding navbar/footer */
                         border-radius: 20px;
                         border: 1px solid black;
                         margin: 0 auto; /* Optional: Centering the iframe */
@@ -36,22 +35,19 @@
                     
                     iframe {
                         position: relative;
-                        top: -56px;
                         width: 100%;
                         height: 800px;
-                        border-top-left-radius: 20px;
-                        border-top-right-radius: 20px;
-                        border-bottom-left-radius: 20px;
-                        border-bottom-right-radius: 20px;
                     }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
-                <main>
-                    <div class="iframe-container">
-                        <iframe
-                            src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0" scrolling="no"
-                        />
+                <main class="flex-shrink-0">
+                    <div class="container">
+                        <div class="iframe-container">
+                            <iframe
+                                src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                                scrolling="yes"/>
+                        </div>
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
