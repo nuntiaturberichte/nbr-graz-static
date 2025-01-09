@@ -16,13 +16,20 @@
                 <xsl:call-template name="html_head">
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
+                <style>
+                    nav.navbar-dark {
+                        display: none;
+                    }
+                    footer.text-muted {
+                        display: none;
+                    }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main>
                     <iframe
                         src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                        width="100%" height="800" frameborder="0"
+                        width="100%" height="800" style="border: 1px solid black;"
                         sandbox="allow-scripts allow-same-origin"/>
                 </main>
                 <xsl:call-template name="html_footer"/>
