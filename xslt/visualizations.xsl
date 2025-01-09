@@ -17,10 +17,10 @@
                     <xsl:with-param name="html_title" select="$doc_title"/>
                 </xsl:call-template>
                 <style>
-                    nav.navbar-dark {
+                    nav.cs-navbar {
                         display: none;
                     }
-                    footer.text-muted {
+                    footer.cs-footer {
                         display: none;
                     }</style>
             </head>
