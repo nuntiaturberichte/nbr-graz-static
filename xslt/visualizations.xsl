@@ -28,11 +28,13 @@
                 <xsl:call-template name="html_footer"/>
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
-                    document.querySelectorAll('nav.cs-navbar, footer.cs-footer')
-                    .forEach(el => el.style.display = 'none');
+                    document.querySelectorAll('nav.navbar-dark, footer.text-muted')
+                    .forEach(el => {
+                    el.style.display = 'none';
+                    });
                     });
                 </script>
-                
+
             </body>
         </html>
     </xsl:template>
