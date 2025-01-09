@@ -22,16 +22,13 @@
                     rel="stylesheet"/>
                 <style>
                     main {
-                        display: flex;
-                        justify-content: center; /* Horizontal zentrieren */
-                        align-items: center; /* Vertikal zentrieren */
                         padding-top: 7px;
                     }
                     
                     .iframe-wrapper {
                         display: flex;
-                        gap: 15px; /* Abstand zwischen iframe und Button */
-                        align-items: center; /* Vertikale Ausrichtung */
+                        justify-content: center;
+                        width: 100%;
                     }
                     
                     .iframe-container {
@@ -58,7 +55,7 @@
                     
                     .collapse-overlay {
                         position: absolute;
-                        top: 175px;
+                        top: 380px;
                         left: 50%;
                         transform: translateX(-50%);
                         z-index: 100;
@@ -93,9 +90,8 @@
                                     <p> Die Visualisierungen werden von <a
                                             href="https://correspsearch.net" target="_blank"
                                             rel="noopener noreferrer">CorrespSearch</a> via iframe
-                                        auf dieser Webseite eingebunden. Weitere Informationen
-                                        finden Sie auf der <a
-                                            href="https://correspsearch.net/de/vis.html"
+                                        auf dieser Webseite eingebunden. Hier geht es zu der <a
+                                            href="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
                                             target="_blank" rel="noopener noreferrer"
                                         >Quellseite</a>.</p>
                                 </div>
