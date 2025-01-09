@@ -103,6 +103,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="register.html">Register</a>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="visualizations.html">Visualisierungen</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a title="Suche" class="nav-link" href="search.html">Suche</a>
