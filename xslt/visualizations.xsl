@@ -36,10 +36,9 @@
                     
                     iframe {
                         position: relative;
-                        top: -50px;
-                        width: 80%;
+                        top: -56px;
+                        width: 100%;
                         height: 800px;
-                        border: 1px solid black;
                         border-top-left-radius: 20px;
                         border-top-right-radius: 20px;
                         border-bottom-left-radius: 20px;
@@ -51,7 +50,7 @@
                 <main>
                     <div class="iframe-container">
                         <iframe
-                            src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                            src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0" scrolling="no"
                         />
                     </div>
                 </main>
