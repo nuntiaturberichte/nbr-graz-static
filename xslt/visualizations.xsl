@@ -23,27 +23,39 @@
                         align-items: center; /* Vertikal zentrieren */
                         height: 100vh; /* Container auf volle Höhe setzen */
                     }
+                    
+                    .iframe-container {
+                        position: relative;
+                        width: 80%;
+                        height: 700px; /* Visible height excluding navbar/footer */
+                        overflow: hidden; /* Hide the unwanted parts */
+                        border-radius: 20px;
+                        border: 1px solid black;
+                        margin: 0 auto; /* Optional: Centering the iframe */
+                    }
+                    
                     iframe {
+                        position: relative;
+                        top: -50px;
                         width: 80%;
                         height: 800px;
                         border: 1px solid black;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                        border-bottom-right-radius: 20px;
                     }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main>
-                    <iframe
-                        src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                        sandbox="allow-scripts allow-same-origin"/>
+                    <div class="iframe-container">
+                        <iframe
+                            src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                        />
+                    </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <script>document.addEventListener('DOMContentLoaded', () => {
-                    document.querySelectorAll('nav.cs-navbar, footer.cs-footer')
-                    .forEach(el => {
-                    el.style.display = 'none';
-                    });
-                    });
-                </script>
             </body>
         </html>
     </xsl:template>
