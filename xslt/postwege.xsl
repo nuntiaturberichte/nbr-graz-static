@@ -112,7 +112,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                      select="descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref"
+                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'sent']/tei:persName[1]/@ref"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -124,7 +124,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                      select="descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref"
+                                                  select="descendant::tei:correspDesc/tei:correspAction[@type = 'received']/tei:persName[1]/@ref"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -141,7 +141,7 @@
                                             <a target="_blank">
                                                 <xsl:attribute name="href">
                                                   <xsl:value-of
-                                                      select="descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref"
+                                                  select="descendant::tei:correspAction[@type = 'sent']/tei:placeName/@ref"
                                                   />
                                                 </xsl:attribute>
                                                 <xsl:value-of
@@ -159,7 +159,6 @@
                 </main>
                 <xsl:call-template name="html_footer"/>
                 <xsl:call-template name="tabulator_js_postwege"/>
-                <xsl:call-template name="html_tabulator_dl_buttons_js"/>
                 <xsl:call-template name="tooltip"/>
             </body>
         </html>

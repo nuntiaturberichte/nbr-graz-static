@@ -363,6 +363,21 @@
             document.getElementById('tabulator-table-wrapper').style.display = 'block';
             });
             window.myTable = table;
+            
+            //trigger download of data.csv file
+            document.getElementById("download-csv").addEventListener("click", function(){
+            table.download("csv", "data.csv");
+            });
+            
+            //trigger download of data.json file
+            document.getElementById("download-json").addEventListener("click", function(){
+            table.download("json", "data.json");
+            });
+            
+            //trigger download of data.html file
+            document.getElementById("download-html").addEventListener("click", function(){
+            table.download("html", "data.html", {style:true});
+            });
             });
         </script>
     </xsl:template>
@@ -387,25 +402,6 @@
                 </button>
             </div>
         </div>
-    </xsl:template>
-
-    <xsl:template match="/" name="html_tabulator_dl_buttons_js">
-        <script>
-            //trigger download of data.csv file
-            document.getElementById("download-csv").addEventListener("click", function(){
-            table.download("csv", "data.csv");
-            });
-            
-            //trigger download of data.json file
-            document.getElementById("download-json").addEventListener("click", function(){
-            table.download("json", "data.json");
-            });
-            
-            //trigger download of data.html file
-            document.getElementById("download-html").addEventListener("click", function(){
-            table.download("html", "data.html", {style:true});
-            });
-        </script>
     </xsl:template>
 
 </xsl:stylesheet>
