@@ -34,7 +34,7 @@
                     .iframe-container {
                         position: relative;
                         width: 80%;
-                        height: 800px; /* Visible height excluding navbar/footer */
+                        height: 750px;
                         border-radius: 20px;
                         border: 1px solid black;
                         overflow: hidden;
@@ -46,68 +46,39 @@
                         height: 800px;
                     }
                     
-                    .button-container {
-                        display: flex;
-                        justify-content: center;
-                        position: relative;
-                        align-items: center;
+                    div.p-wrapper {
+                        text-align: center;
                     }
                     
-                    .collapse-overlay {
-                        position: absolute;
-                        top: 380px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        z-index: 100;
-                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        border: 1px solid black;
-                        border-radius: 6px;
-                        max-width: 400px;
+                    div.p-wrapper > p {
+                        border: solid black 1px;
+                        border-radius: 5px;
+                        background-color: #f7f7f7;
+                        padding: 0.5em;
+                        margin-bottom: 0.5em;
+                        display: inline-block;
                     }</style>
             </head>
             <body>
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0">
+                    <div class="p-wrapper">
+                        <p><i class="bi bi-info-square-fill"/> Die Visualisierungen werden von <a
+                                href="https://correspsearch.net" target="_blank"
+                                rel="noopener noreferrer">CorrespSearch</a> via iframe auf dieser
+                            Webseite eingebunden. Hier geht es zu der <a
+                                href="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
+                                target="_blank" rel="noopener noreferrer">Quellseite</a>.</p>
+                    </div>
                     <div class="iframe-wrapper">
                         <div class="iframe-container">
                             <iframe
                                 src="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
                                 scrolling="yes"/>
                         </div>
-                        <div class="button-container">
-                            <span id="tooltip" title="Hinweis">
-                                <button class="btn btn-collapse btn-lg" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseExample"
-                                    aria-expanded="false" aria-controls="collapseExample">
-                                    <i class="bi bi-info-square-fill"/>
-                                </button>
-                            </span>
-                        </div>
-                        <div class="collapse collapse-overlay" id="collapseExample">
-                            <div class="card">
-                                <div class="card-header">Hinweis zu den Visualisierungen</div>
-                                <div class="card-body">
-                                    <p> Die Visualisierungen werden von <a
-                                            href="https://correspsearch.net" target="_blank"
-                                            rel="noopener noreferrer">CorrespSearch</a> via iframe
-                                        auf dieser Webseite eingebunden. Hier geht es zu der <a
-                                            href="https://correspsearch.net/de/vis.html?c=https://raw.githubusercontent.com/nuntiaturberichte/nbr-graz-data/main/cmif/gn_cmif.xml&amp;x=1&amp;w=0&amp;vistype=0"
-                                            target="_blank" rel="noopener noreferrer"
-                                        >Quellseite</a>.</p>
-                                </div>
-                                <div class="card-footer text-end">
-                                    <button type="button"
-                                        onclick="document.getElementById('collapseExample').classList.remove('show')"
-                                        class="btn" style="background-color: gray;color: white;"
-                                        >Schließen</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </main>
                 <xsl:call-template name="html_footer"/>
-                <xsl:call-template name="tooltip"/>
             </body>
         </html>
     </xsl:template>
