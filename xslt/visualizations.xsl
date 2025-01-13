@@ -50,7 +50,7 @@
                         text-align: center;
                     }
                     
-                    div.p-wrapper > p {
+                    div.p-wrapper p {
                         border: solid black 1px;
                         border-radius: 5px;
                         background-color: #f7f7f7;
