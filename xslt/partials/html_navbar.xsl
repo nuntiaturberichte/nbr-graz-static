@@ -91,7 +91,6 @@
                                     </li>
                                 </ul>
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="toc.html">Briefe</a>
                             </li>
@@ -103,7 +102,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="register.html">Register</a>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="visualizations.html">Visualisierungen</a>
                             </li>

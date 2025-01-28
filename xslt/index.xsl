@@ -22,14 +22,17 @@
                 <meta name="google-site-verification"
                     content="nRhcEVFXM70VW4hRGGQVvvaTZ1yOkboMocYW99bO92E"/>
                 <meta name="description"
-                    content="Recherchieren Sie in der frei zugänglichen Korrespondenz des päpstlichen Gesandten in Innerösterreich zur Zeit der Gegenreformation."
-                />
+                    content="Recherchieren Sie in der frei zugänglichen Korrespondenz des päpstlichen Gesandten in Innerösterreich zur Zeit der Gegenreformation."/>
+                <style>
+                    .nunt-link:hover {
+                        background-color: #f8f9fa !important;
+                    }</style>
             </head>
             <body class="d-flex flex-column h-100">
                 <xsl:call-template name="nav_bar"/>
                 <main class="flex-shrink-0 flex-grow-1">
                     <div class="container col-xxl-8 pt-3">
-                        <div class="row flex-lg-row align-items-center g-5 py-5">
+                        <div class="row flex-lg-row align-items-center g-5 py-3">
                             <div class="col-lg-6">
                                 <h1 class="lh-base">
                                     <span class="display-6">Grazer Nuntiatur</span>
@@ -44,10 +47,21 @@
                                 <xsl:apply-templates select="//tei:body//tei:p[@style = 'small']"/>
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                                     <a href="search.html" type="button"
-                                        class="btn btn-dark btn-lg px-4 me-md-2">Volltextsuche</a>
+                                        class="btn btn-dark px-4 me-md-2">Volltextsuche</a>
                                     <a href="toc.html" type="button"
-                                        class="btn btn-outline-dark btn-lg px-4">Zur
-                                        Korrespondenz</a>
+                                        class="btn btn-outline-dark px-4">Zur Korrespondenz</a>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle"
+                                            type="button" data-bs-toggle="dropdown"
+                                            aria-expanded="false">Zu anderen Nuntiaturen</button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item nunt-link"
+                                                  href="https://grazer-nuntiatur.acdh.oeaw.ac.at/"
+                                                  style="background-color: #f8c400">Pius XI</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-10 col-sm-8 col-lg-6" style="text-align: center;">
