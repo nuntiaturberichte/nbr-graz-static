@@ -31,7 +31,7 @@
                         id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                <a class="nav-link sec dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Projekt</a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -45,7 +45,7 @@
                             </li>
 
                             <li class="nav-item dropdown disabled">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                <a class="nav-link sec dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">Technisches</a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -70,7 +70,7 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                <a class="nav-link sec dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false"
                                     >Bandeinleitungen</a>
                                 <ul class="dropdown-menu">
@@ -92,23 +92,23 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="toc.html">Briefe</a>
+                                <a class="nav-link pri" href="toc.html">Briefe</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="calendar.html">Kalender</a>
+                                <a class="nav-link pri" href="calendar.html">Kalender</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="register.html">Register</a>
+                                <a class="nav-link pri" href="register.html">Register</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="visualizations.html">Visualisierungen</a>
+                                <a class="nav-link pri" href="visualizations.html">Visualisierungen</a>
                             </li>
 
                             <li class="nav-item">
-                                <a title="Suche" class="nav-link" href="search.html">Suche</a>
+                                <a title="Suche" class="nav-link pri" href="search.html">Suche</a>
                             </li>
                         </ul>
                     </div>
