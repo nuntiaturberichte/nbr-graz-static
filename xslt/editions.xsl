@@ -271,25 +271,28 @@
                                 </xsl:if>
                                 <xsl:if test="//tei:text/tei:body/tei:div/tei:p">
                                     <div id="letter-text-container" class="card-body">
-                                        <h2>Brieftext</h2>
+                                        <div
+                                            style="display: flex; align-items: center; justify-content: space-between;">
+                                            <h2>Brieftext</h2>
 
-                                        <xsl:variable name="fileName"
-                                            select="tokenize(document-uri(.), '/')[last()]"/>
-                                        <div>
-                                            <a id="downloadPdf" class="btn btn-danger btn-sm"
-                                                style="margin-right: .25rem;">
-                                                <span id="pdfFileName" style="display: none;">
+                                            <xsl:variable name="fileName"
+                                                select="tokenize(document-uri(.), '/')[last()]"/>
+                                            <div>
+                                                <a id="downloadPdf" class="btn btn-danger btn-sm"
+                                                  style="margin-right: .25rem;">
+                                                  <span id="pdfFileName" style="display: none;">
                                                   <xsl:value-of
                                                   select="replace(tokenize(document-uri(.), '/')[last()], '.xml$', '.pdf')"
                                                   />
-                                                </span>PDF herunterladen</a>
-                                            
-                                            <a
-                                                href="https://grazer-nuntiatur.acdh.oeaw.ac.at/{$fileName}"
-                                                target="_blank" class="btn btn-primary btn-sm">XML
-                                                herunterladen</a>
+                                                  </span>PDF herunterladen</a>
+
+                                                <a
+                                                  href="https://grazer-nuntiatur.acdh.oeaw.ac.at/{$fileName}"
+                                                  target="_blank" class="btn btn-primary btn-sm">XML
+                                                  herunterladen</a>
+                                            </div>
                                         </div>
-                                        
+
                                         <xsl:for-each select="//tei:text/tei:body/tei:div">
                                             <div id="letter-text">
                                                 <xsl:apply-templates/>
