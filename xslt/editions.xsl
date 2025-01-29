@@ -272,6 +272,24 @@
                                 <xsl:if test="//tei:text/tei:body/tei:div/tei:p">
                                     <div id="letter-text-container" class="card-body">
                                         <h2>Brieftext</h2>
+
+                                        <xsl:variable name="fileName"
+                                            select="tokenize(document-uri(.), '/')[last()]"/>
+                                        <div>
+                                            <a id="downloadPdf" class="btn btn-danger btn-sm"
+                                                style="margin-right: .25rem;">
+                                                <span id="pdfFileName" style="display: none;">
+                                                  <xsl:value-of
+                                                  select="replace(tokenize(document-uri(.), '/')[last()], '.xml$', '.pdf')"
+                                                  />
+                                                </span>PDF herunterladen</a>
+                                            
+                                            <a
+                                                href="https://grazer-nuntiatur.acdh.oeaw.ac.at/{$fileName}"
+                                                target="_blank" class="btn btn-primary btn-sm">XML
+                                                herunterladen</a>
+                                        </div>
+                                        
                                         <xsl:for-each select="//tei:text/tei:body/tei:div">
                                             <div id="letter-text">
                                                 <xsl:apply-templates/>
@@ -318,32 +336,6 @@
                                         </ul>
                                     </div>
                                 </xsl:if>
-                            </div>
-                            <div class="card-footer">
-                                <div class="row">
-                                    <div class="col-12 col-md-4 d-flex justify-content-start">
-                                        <h4>Download</h4>
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex justify-content-center">
-                                        <a
-                                            href="https://grazer-nuntiatur.acdh.oeaw.ac.at/{concat(//tei:TEI/@xml:id, '.xml')}"
-                                            target="_blank" style="color: black;">
-                                            <i class="fas fa-file-code fa-2x"
-                                                title="XML herunterladen"/>&#160;<xsl:value-of
-                                                select="concat(//tei:TEI/@xml:id, '.xml')"/>
-                                        </a>
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex justify-content-center">
-                                        <a href="#" id="downloadPdf" style="color: black;">
-                                            <i class="fas fa-file-pdf fa-2x"
-                                                title="PDF herunterladen"/>&#160;<span
-                                                id="pdfFileName">
-                                                <xsl:value-of
-                                                  select="concat(//tei:TEI/@xml:id, '.pdf')"/>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
