@@ -18,6 +18,26 @@
                 </xsl:call-template>
                 <meta name="description"
                     content="Durchsuchen Sie die digitale Sammlung der Grazer Nuntiaturberichte mit einer facettierten Volltextsuche, die es Ihnen ermöglicht, die Suchergebnisse nach verschiedenen Kategorien zu filtern."/>
+                <style>
+                    .ais-SearchBox-input:focus {
+                        border-color: #8f8f8f;
+                        box-shadow: 0 0 0 5px #8f8f8f;
+                        outline: none;
+                    }
+                    
+                    .ais-Pagination-link {
+                        color: black !important;
+                    }
+                    
+                    .ais-Pagination-item--selected .ais-Pagination-link {
+                        background-color: #8f8f8f !important;
+                        border-color: #8f8f8f !important;
+                        color: white !important;
+                    }
+                    
+                    .ais-RefinementList-showMore.btn {
+                        background-color: #8f8f8f !important;
+                    }</style>
             </head>
 
             <body class="d-flex flex-column h-100">
@@ -34,23 +54,23 @@
                             <div id="current-refinements"/>
                             <div id="clear-refinements"/>
                         </div>
-                        
+
                         <div class="row">
                             <div id="pagination" class="p-3"/>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-md-3">
                                 <h2>Facetten</h2>
-                                <div id="refinement-list-sender" class="pb-3"></div>
-                                <div id="refinement-list-receiver" class="pb-3"></div>
-                                <div id="refinement-list-volume" class="pb-3"></div>
+                                <div id="refinement-list-sender" class="pb-3"/>
+                                <div id="refinement-list-receiver" class="pb-3"/>
+                                <div id="refinement-list-volume" class="pb-3"/>
                             </div>
                             <div class="col-md-9">
                                 <div id="hits"/>
                             </div>
                         </div>
-                        
+
                     </div>
                 </main>
                 <xsl:call-template name="html_footer"/>
