@@ -55,8 +55,11 @@
                         border: solid black 1px;
                         border-radius: 5px;
                         background-color: #f7f7f7;
-                        padding: 0.5em;
-                        margin-bottom: 0.5em;
+                        padding-top: 0;
+                        padding-bottom: 0;
+                        z-index: 1000;
+                        position: relative;
+                        margin-bottom: 0.75rem;
                         display: inline-block;
                     }</style>
             </head>
