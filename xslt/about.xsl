@@ -175,6 +175,14 @@
                         <xsl:choose>
                             <xsl:when test="position() = 1">
                                 <xsl:for-each select="tei:cell">
+                                    <td colspan="{@cols}"
+                                        style="text-align:center; font-weight: bold; background-color: #E0E0E0;">
+                                        <xsl:value-of select="."/>
+                                    </td>
+                                </xsl:for-each>
+                            </xsl:when>
+                            <xsl:when test="position() = 2">
+                                <xsl:for-each select="tei:cell">
                                     <th>
                                         <xsl:value-of select="."/>
                                     </th>
@@ -255,7 +263,9 @@
     </xsl:template>
 
     <xsl:template match="tei:gi">
-        <code><xsl:apply-templates/></code>
+        <code>
+            <xsl:apply-templates/>
+        </code>
     </xsl:template>
 
     <xsl:template match="tei:head">
