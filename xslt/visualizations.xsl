@@ -38,6 +38,7 @@
                         border-radius: 20px;
                         border: 1px solid black;
                         overflow: hidden;
+                        box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.8);
                     }
                     
                     iframe {
