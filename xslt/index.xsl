@@ -57,7 +57,7 @@
                                         <ul class="dropdown-menu">
                                             <li>
                                                 <a class="dropdown-item nunt-link"
-                                                  href="https://grazer-nuntiatur.acdh.oeaw.ac.at/"
+                                                  href="https://nuntiatur-pius-xi.acdh.oeaw.ac.at/"
                                                   style="background-color: #f8c400">Pius XI</a>
                                             </li>
                                         </ul>
