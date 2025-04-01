@@ -9,6 +9,7 @@
             document.addEventListener("DOMContentLoaded", function() {
             var table = new Tabulator("#tabulator-table-register", {
             pagination: "local",  // Paginierung aktivieren
+            movableRows: true,
             paginationSize: 50,   // 50 Zeilen pro Seite anzeigen
             paginationCounter: "rows",  // Anzeige der Seitenanzahl im Footer
             responsiveLayout: true,
