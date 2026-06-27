@@ -22,6 +22,11 @@ except ObjectNotFound:
 current_schema = {
     "name": COLLECTION_NAME,
     "enable_nested_fields": True,
+    "metadata": {
+        "owners": ["Peter Andorfer", "Martin Kroißenbrunner"],
+        "description": "https://github.com/nuntiaturberichte/nbr-graz-static",
+        "service_ids": [13585],
+    },
     "fields": [
         {"name": "id", "type": "string", "sort": True},
         {"name": "rec_id", "type": "string", "sort": True},
@@ -101,9 +106,7 @@ for x in tqdm(files, total=len(files)):
 
     record["receiver"] = []
     cfts_record["persons"] = []
-    for y in doc.any_xpath(
-        ".//tei:correspAction[@type='received']//tei:persName"
-    ):  # noqa:
+    for y in doc.any_xpath(".//tei:correspAction[@type='received']//tei:persName"):  # noqa:
         record["receiver"].append(normalize_string(y.text))
         cfts_record["persons"].append(normalize_string(y.text))
 
