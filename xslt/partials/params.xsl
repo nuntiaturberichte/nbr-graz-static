@@ -4,7 +4,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
     <xsl:param name="directory_name">nbr-graz-static</xsl:param>
     <xsl:param name="project_title">Digitale Edition Grazer Nuntiaturberichte</xsl:param>
-    <xsl:param name="redmine_id">18716</xsl:param>
+    <xsl:param name="redmine_id">13585</xsl:param>
     <xsl:param name="project_short_title">Grazer Nuntiaturberichte</xsl:param>
     <xsl:param name="github_url">https://github.com/nuntiaturberichte/nbr-graz-static</xsl:param>
     <xsl:param name="html_title">Grazer Nuntiaturberichte</xsl:param>
